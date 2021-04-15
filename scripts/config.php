@@ -14,14 +14,13 @@ if(!empty($_ENV['MYSQL_USER'])){
 if(!empty($_ENV['MYSQL_ROOT_PASSWORD'])){
     $PASSWORD = $_ENV['MYSQL_ROOT_PASSWORD'];
 } else {
-    $PASSWORD = 'root';
+    $PASSWORD = '';
 }
 if(!empty($_ENV['MYSQL_DB'])){
     $DB = $_ENV['MYSQL_DB'];
 } else {
-    $DB = 'raportlink_db';
+    $DB = 'raportlink';
 }
-
 
 /* Attempt to connect to MySQL database */
 $link = mysqli_connect($HOST, $USER, $PASSWORD, $DB);
