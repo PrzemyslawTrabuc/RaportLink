@@ -46,6 +46,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "<div class=\"alert alert-danger \" role=\"alert\"> Błędne dane logowania </div>";
         }
 
+    }else if($uname == "" && $password == "")
+    {
+      echo "<div class=\"alert alert-danger \" role=\"alert\"> Błędne dane logowania </div>";        
     }
 
 }
