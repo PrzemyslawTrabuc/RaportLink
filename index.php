@@ -1,14 +1,34 @@
-<!DOCTYPE html>
 <?php session_start();
 ?>
+
+<!DOCTYPE html>
+
 <html>
     <head>     
         <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
         <link rel="stylesheet" href="custom_css\custom_css.css">
+        <link href="//db.onlinewebfonts.com/c/2ea06e066778c7c8c33ac017e8449d26?family=Polentical+Neon" rel="stylesheet" type="text/css"/>
+        <style>
+          .special_font{
+            @import url(//db.onlinewebfonts.com/c/2ea06e066778c7c8c33ac017e8449d26?family=Polentical+Neon);
+            font-family: "Polentical Neon"
+          }
+          img{
+            @import url(//db.onlinewebfonts.com/c/2ea06e066778c7c8c33ac017e8449d26?family=Polentical+Neon);
+            font-family: "Polentical Neon"
+          }
+        </style>
     </head>
     <body>      
-     <div id="logo-top" class="container w3-animate-top"><img src="images/Raport Link logo_light.svg"></div>
+      
+       <div id="logo-top" class="container w3-animate-top" class="special_font">
+        <img src="images/Raport Link logo_light.svg" class="special_font">
+       </div>
+      <!--
+      <object data="images/Raport Link logo_light.svg" > </object>
+      -->
+      
      <div id="login-div">
      <form class="form" method="POST">
         <div class="form-group">
