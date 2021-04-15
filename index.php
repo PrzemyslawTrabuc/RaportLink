@@ -1,5 +1,6 @@
 <?php session_start();
-    include "scripts/config.php";
+$login_error_flag = 0; 
+    include "scripts/config.php";    
     if($_SERVER["REQUEST_METHOD"] == "POST"){
         $uname = mysqli_real_escape_string($link,$_POST['InputLogin']);
         $password = mysqli_real_escape_string($link,$_POST['InputPassword']);
@@ -17,12 +18,12 @@
               libxml_use_internal_errors(true);
               $doc = new DOMDocument();
               $doc->loadHTML($html);
-              $descBox = $doc->getElementById('element1');
-              echo "<div class=\"alert alert-danger \" role=\"alert\"> Błędne dane logowania </div>";
+              $descBox = $doc->getElementById('element1');                  
+              $login_error_flag = 1;        
             }
         }else if($uname == "" && $password == "")
         {
-          echo "<div class=\"alert alert-danger \" role=\"alert\"> Błędne dane logowania </div>";        
+          $login_error_flag = 1;      
         }
     }
 ?>
@@ -62,10 +63,14 @@
           </div>       
           <div class="form-group" id="buttons"><p class="buttons"><button type="submit" method="POST" class="btn btn-primary"><i class="fas fa-key fa-lg"></i> ZALOGUJ</button></div>
         </form>
+        <div id="alert" class="alert alert-danger " role="alert"> Błędne dane logowania </div>
       </div>  
     </div>
     </body>
 </html>
 <?php
-
+if($login_error_flag == 1)
+{
+echo "<script type='text/javascript'>","document.getElementById('alert').style.display = 'block';","</script>";
+}
 ?>
