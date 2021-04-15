@@ -1,4 +1,30 @@
 <?php session_start();
+    include "scripts/config.php";
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $uname = mysqli_real_escape_string($link,$_POST['InputLogin']);
+        $password = mysqli_real_escape_string($link,$_POST['InputPassword']);
+        if ($uname != "" && $password != ""){
+            $sql_query = "select count(*) as cntUser from dane_do_logowania where login='".$uname."' and haslo='".$password."'";
+            $result = mysqli_query($link,$sql_query);     
+            $row = mysqli_fetch_array($result);
+            $count = $row['cntUser'];
+            if($count > 0){        
+                $_SESSION['uname'] = $uname;
+                header('Location:signed_in.php', true, 301);
+                exit;
+            }else{
+              $html = file_get_contents('index.php');
+              libxml_use_internal_errors(true);
+              $doc = new DOMDocument();
+              $doc->loadHTML($html);
+              $descBox = $doc->getElementById('element1');
+              echo "<div class=\"alert alert-danger \" role=\"alert\"> Błędne dane logowania </div>";
+            }
+        }else if($uname == "" && $password == "")
+        {
+          echo "<div class=\"alert alert-danger \" role=\"alert\"> Błędne dane logowania </div>";        
+        }
+    }
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,9 +49,6 @@
        <div id="logo-top" class="container w3-animate-top" class="special_font">
         <img src="images/Raport Link logo_light.svg" class="special_font">
        </div>
-      <!--
-      <object data="images/Raport Link logo_light.svg" > </object>
-      -->
       
       <div id="login-div">
         <form class="form" method="POST">
@@ -44,27 +67,5 @@
     </body>
 </html>
 <?php
-include "scripts/config.php";
-if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $uname = mysqli_real_escape_string($link,$_POST['InputLogin']);
-    $password = mysqli_real_escape_string($link,$_POST['InputPassword']);
-    if ($uname != "" && $password != ""){
-        $sql_query = "select count(*) as cntUser from dane_do_logowania where login='".$uname."' and haslo='".$password."'";
-        $result = mysqli_query($link,$sql_query);     
-        $row = mysqli_fetch_array($result);
-        $count = $row['cntUser'];
-        if($count > 0){        
-            $_SESSION['uname'] = $uname;
-            header('Location: signed_in.php');
-        }else{
-          $html = file_get_contents('index.php');
-          libxml_use_internal_errors(true);
-          $doc = new DOMDocument();
-          $doc->loadHTML($html);
-          $descBox = $doc->getElementById('element1');
-          echo "<div class=\"alert alert-danger \" role=\"alert\"> Błędne dane logowania </div>";
-        }
-    }
-}
 
 ?>
