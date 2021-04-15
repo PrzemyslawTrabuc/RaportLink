@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 
 <html>
-    <head>     
+    <head>  
         <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
         <link rel="stylesheet" href="custom_css\custom_css.css">

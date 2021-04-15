@@ -18,14 +18,15 @@ body
 }
 #logo-top
 {
-    width: auto;
-    height: auto;   
+    min-width: auto;
+    min-height: auto;   
+    margin-top: 6%;
+    
 }
 #buttons
 {
     text-align: center;    
-    clear: both;
-     
+    clear: both;     
 }
 #login-div
 {
