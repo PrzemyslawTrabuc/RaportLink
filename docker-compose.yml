@@ -1,0 +1,49 @@
+version: '3'
+services:
+    php:
+        build:
+            context: ./Docker/php/
+        image: result/latest
+        networks: 
+            - frontend
+            - backend
+        environment: 
+            - MYSQL_HOST=raportlink-sql
+            - MYSQL_USER=root
+            - MYSQL_PASSWORD=user
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_DB=raportlink_db
+        volumes: 
+            - .:/var/www/html
+        ports:
+            - "3000:80"
+        container_name: raportlink
+    mysql:
+        build:
+            context: ./Docker/mysql/
+        image: mysql:latest
+        networks: 
+            - backend
+        environment: 
+            - MYSQL_ROOT_PASSWORD=root
+            - MYSQL_USER=user
+            - MYSQL_PASSWORD=
+            - MYSQL_DB=raportlink_db
+        container_name: raportlink-sql
+    phpmyadmin:
+        image: phpmyadmin/phpmyadmin:latest
+        depends_on: 
+            - mysql
+        networks: 
+            - backend
+        ports: 
+            - "3001:80"
+        environment: 
+            - PMA_HOST=raportlink-sql
+            - PMA_PROT=3006
+        volumes: 
+            - /sessions
+        container_name: raportlink-phpmyadmin
+networks: 
+    frontend:
+    backend:
