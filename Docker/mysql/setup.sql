@@ -339,3 +339,13 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+INSERT INTO `raportlink_db`.`pracownicy` (`nrid`, `Imie`, `Nazwisko`, `Rola_w_systemie`) VALUES ('1', 'Jan', 'Matejko', '0');
+INSERT INTO `raportlink_db`.`pracownicy` (`nrid`, `Imie`, `Nazwisko`, `Rola_w_systemie`) VALUES ('2', 'Jan', 'Matejka', '0');
+INSERT INTO `raportlink_db`.`pracownicy` (`nrid`, `Imie`, `Nazwisko`, `Rola_w_systemie`) VALUES ('3', 'Bogdan', 'Matej', '0');
+INSERT INTO `raportlink_db`.`pracownicy` (`nrid`, `Imie`, `Nazwisko`, `Rola_w_systemie`) VALUES ('4', 'Joachim', 'Mat', '0');
+
+INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('1', '1', 'admin', 'admin','','2021-04-15');
+INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('2', '2', 'admin1', 'admin1','','2021-04-15');
+INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('3', '3', 'admin2', 'admin2','','2021-04-15');
+INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('4', '4', 'admin3', 'admin3','','2021-04-15');
