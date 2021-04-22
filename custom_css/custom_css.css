@@ -112,3 +112,14 @@ align-content: center;
   ::-webkit-scrollbar-thumb:hover {
     background: #474747; 
   }
+
+.event h4
+{
+text-align: left;
+}
+
+.event
+{
+    text-align: justify;
+    font-size: 16px;
+}

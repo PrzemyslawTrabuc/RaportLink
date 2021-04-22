@@ -16,7 +16,7 @@ $login_error_flag = 0;
             }else{                 
               $login_error_flag = 1;        
             }
-        }else if($uname == "" && $password == "")
+        }else if($uname == "" || $password == "")
         {
           $login_error_flag = 1;      
         }

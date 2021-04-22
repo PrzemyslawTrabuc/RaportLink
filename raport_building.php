@@ -18,7 +18,7 @@ if($_SESSION['uname']=="")
        $("button[name='add_event']").click(function test() {
         var text = document.getElementById("event").value;
         var time = document.getElementById("time").value;
-           var domElement = $('<div class="time"><h3>'+time+'</h3>'+text+'</div>');           
+           var domElement = $('<div class="event"><h4><i class="far fa-clock"></i> '+time+'</h4><br>'+text+'</div><hr>');           
            $("div[id='raport_header']").before(domElement);        
            document.getElementById("time").value="";
            document.getElementById("event").value="";
@@ -53,7 +53,7 @@ if($_SESSION['uname']=="")
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Nowe zdarzenie</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -71,8 +71,8 @@ if($_SESSION['uname']=="")
         </form>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" name="add_event" class="btn btn-primary" data-dismiss="modal">Send message</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
+        <button type="button" name="add_event" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
       </div>
     </div>
   </div>
