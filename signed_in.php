@@ -12,7 +12,7 @@ if($_SESSION['uname']=="")
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
         <link rel="stylesheet" href="custom_css\custom_css.css">        
     </head>
-    <body>      
+    <body>
      <div id="logo-top" class="container"><img src="images/Raport Link logo_light.svg"></div>
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
      <div class="buttons_middle">     
