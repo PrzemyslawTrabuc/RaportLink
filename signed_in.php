@@ -10,16 +10,18 @@ if($_SESSION['uname']=="")
     <head>     
         <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
-        <link rel="stylesheet" href="custom_css\custom_css.css">
+        <link rel="stylesheet" href="custom_css\custom_css.css">        
     </head>
     <body>
      <div id="logo-top" class="container"><img src="images/Raport Link logo_light.svg"></div>
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
-     <div class="buttons_middle">
-      <p class="buttons"><button type="button" class="btn btn-primary"><i class="far fa-building fa-lg"></i> Firma 1</button><img class="company_logo" src="images/Raport Link logo_dark.svg"></img>
-      <br>
-        <button type="button" class="btn btn-primary"><i class="far fa-building fa-lg"></i> Firma 2</button> <img class="company_logo" src="images/Raport Link logo_light.svg"></img>
-      <br>
+     <div class="buttons_middle">     
+     <form action="scripts/redirect_to_building.php">
+      <button type="submit" class="btn btn-primary"><i class="far fa-building fa-lg"></i> Firma 1</button><img class="company_logo" src="images/test.jpg"></img>
+      </form>    
+        <button type="button" class="btn btn-primary"><i class="far fa-building fa-lg"></i> Firma 2</button><img class="company_logo" src="images/Raport Link logo_light.svg"></img>
+      <br>     
+     
         <button type="button" class="btn btn-light"><i class="far fa-edit fa-lg"></i> Edytuj Raporty</button>     
       <br>
       <form action="scripts/logout.php">
