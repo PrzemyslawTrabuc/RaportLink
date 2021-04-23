@@ -12,20 +12,9 @@ if($_SESSION['uname']=="")
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
         <link rel="stylesheet" href="custom_css\custom_css.css">  
         <script src="node_modules\jquery\dist\jquery.min.js"></script>  
-        <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>        
-          <script>
-        $(document).ready(function test() {      
-       $("button[name='add_event']").click(function test() {
-        var text = document.getElementById("event").value;
-        var time = document.getElementById("time").value;
-           var domElement = $('<div class="event"><h4><i class="far fa-clock"></i> '+time+'</h4><br>'+text+'</div><hr>');           
-           $("div[id='raport_header']").before(domElement);        
-           document.getElementById("time").value="";
-           document.getElementById("event").value="";
-       });
-      
-      });
-          </script>         
+        <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
+        <script src="scripts\add_event.js"></script>          
+             
     </head>
     <body>      
      <div id="logo-top" class="container"><img src="images/Raport Link logo_light.svg"></div>
