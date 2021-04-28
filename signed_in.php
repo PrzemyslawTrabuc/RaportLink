@@ -16,7 +16,7 @@ if($_SESSION['uname']=="")
      <div id="logo-top" class="container"><img src="images/Raport Link logo_light.svg"></div>
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
      <div class="buttons_middle">     
-     <form action="scripts/redirect_to_building.php">
+     <form action="scripts/redirect_to_building.php" method="POST">
       <?php 
         include "scripts/config.php";    
         $sql_query = "select * from firma";
@@ -24,7 +24,8 @@ if($_SESSION['uname']=="")
         
         while($row = mysqli_fetch_array($result)){
           $name = $row['nazwa'];
-          echo "<button name=$row['nrid'] type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src='images/test.jpg'></img><br><br>";
+          $id = $row['nrid'];
+          echo "<button name=$id type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src='images/test.jpg'></img><br><br>";
         } 
       ?>
       </form>    
