@@ -3,7 +3,7 @@ $(document).ready(function addEvent() {
    var text = document.getElementById("event").value;
    var time = document.getElementById("time").value;
       var domElement = $('<div class="event"><h4><i class="far fa-clock"></i> '+time+'</h4><br>'+text+'</div><hr>');           
-      $("div[id='raport_header']").before(domElement);        
+      $("div[id='Raport_footer']").before(domElement);        
       document.getElementById("time").value="";
       document.getElementById("event").value="";
   });

@@ -33,7 +33,14 @@ if($_SESSION['uname']=="")
       </form>
        </div>
        <div id="Raport">
-         <div id="raport_header"></div>
+       <div id="raport_header"> 
+         <?php
+         echo '<img class="raport_header" src='.$_SESSION['logo'].'></img>';
+        
+         ?>
+         </div>        
+        <div id="Raport_footer">
+        </div>
        </div>         
 </div> 
 </div>
