@@ -46,6 +46,7 @@ CREATE TABLE `raportlink_db`.`dane_do_logowania` (
 
 CREATE TABLE `raportlink_db`.`firma` (
   `nrid` int(11) NOT NULL,
+  `nrid_zdjecie` int(11) NOT NULL,
   `nazwa` text COLLATE utf8mb4_polish_ci NOT NULL,
   `adr_kod_pocztowy` text COLLATE utf8mb4_polish_ci NOT NULL,
   `adr_miasto` text COLLATE utf8mb4_polish_ci NOT NULL,
@@ -154,7 +155,6 @@ CREATE TABLE `raportlink_db`.`uprawnienia` (
 CREATE TABLE `raportlink_db`.`zdjecie` (
   `nrid` int(11) NOT NULL,
   `nazwa` text COLLATE utf8mb4_polish_ci NOT NULL,
-  `zdjecie` blob NOT NULL,
   `szerokosc` int(11) NOT NULL,
   `wysokosc` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_polish_ci;
@@ -174,7 +174,8 @@ ALTER TABLE `raportlink_db`.`dane_do_logowania`
 -- Indeksy dla tabeli `firma`
 --
 ALTER TABLE `raportlink_db`.`firma`
-  ADD PRIMARY KEY (`nrid`);
+  ADD PRIMARY KEY (`nrid`),
+  ADD KEY `nrid_zdjecie` (`nrid_zdjecie`);
 
 --
 -- Indeksy dla tabeli `pracownicy`
@@ -336,6 +337,13 @@ ALTER TABLE `raportlink_db`.`szablony`
   ADD CONSTRAINT `szablony_ibfk_1` FOREIGN KEY (`nrid_firmy`) REFERENCES `firma` (`nrid`);
 COMMIT;
 
+--
+-- Ograniczenia dla tabeli `firma`
+--
+ALTER TABLE `raportlink_db`.`firma`
+  ADD CONSTRAINT `firma_ibfk_1` FOREIGN KEY (`nrid_zdjecie`) REFERENCES `zdjecie` (`nrid`);
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
@@ -349,3 +357,9 @@ INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `log
 INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('2', '2', 'admin1', 'admin1','','2021-04-15');
 INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('3', '3', 'admin2', 'admin2','','2021-04-15');
 INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('4', '4', 'admin3', 'admin3','','2021-04-15');
+
+INSERT INTO `firma` (`nrid`, `nrid_zdjecie`, `nazwa`, `adr_kod_pocztowy`, `adr_miasto`, `adr_ulica`, `adr_numer`) VALUES ('1', '1', 'firma 2', '54321', 'op', 'op', '2');
+INSERT INTO `firma` (`nrid`, `nrid_zdjecie`, `nazwa`, `adr_kod_pocztowy`, `adr_miasto`, `adr_ulica`, `adr_numer`) VALUES ('2', '2', 'firma 2', '54321', 'op', 'op', '2');
+
+INSERT INTO `zdjecie` (`nrid`, `nazwa`, `szerokosc`, `wysokosc`) VALUES ('1', 'images/Raport_Link_logo_light.svg', '1', '1');
+INSERT INTO `zdjecie` (`nrid`, `nazwa`, `szerokosc`, `wysokosc`) VALUES ('2', 'images/test.jpg', '1', '1');
