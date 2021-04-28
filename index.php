@@ -43,7 +43,7 @@ $login_error_flag = 0;
     <body>      
       
        <div id="logo-top" class="container w3-animate-top" class="special_font">
-        <img src="images/Raport Link logo_light.svg" class="special_font">
+        <img src="images/Raport_Link_logo_light.svg" class="special_font">
        </div>
       
       <div id="login-div">

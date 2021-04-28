@@ -13,7 +13,7 @@ if($_SESSION['uname']=="")
         <link rel="stylesheet" href="custom_css\custom_css.css">        
     </head>
     <body>
-     <div id="logo-top" class="container"><img src="images/Raport Link logo_light.svg"></div>
+     <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
      <div class="buttons_middle">     
      <form action="scripts/redirect_to_building.php" method="POST">
