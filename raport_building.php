@@ -85,7 +85,6 @@ if($_SESSION['uname']=="")
       </div>
       <div class="modal-body">
         <form>
-
 <script>
   
 /*  ==========================================
@@ -123,17 +122,12 @@ function showFileName( event ) {
 }
 
 </script>
-
-
         <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
                     <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
         </div>
-
+        
         <!-- Uploaded image area-->
-
         <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
-
-
 
         </form>
       </div>
