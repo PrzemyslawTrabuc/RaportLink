@@ -17,9 +17,18 @@ if($_SESSION['uname']=="")
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
      <div class="buttons_middle">     
      <form action="scripts/redirect_to_building.php">
-      <button type="submit" class="btn btn-primary"><i class="far fa-building fa-lg"></i> Firma 1</button><img class="company_logo" src="images/test.jpg"></img>
+
+      <?php 
+        include "scripts/config.php";    
+        $sql_query = "select * from firma";
+        $result = mysqli_query($link,$sql_query);
+        
+        while($row = mysqli_fetch_array($result)){
+          $name = $row['nazwa'];
+          echo "<button type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src='images/test.jpg'></img><br><br>";
+        } 
+      ?>
       </form>    
-        <button type="button" class="btn btn-primary"><i class="far fa-building fa-lg"></i> Firma 2</button><img class="company_logo" src="images/Raport Link logo_light.svg"></img>
       <br>     
      
         <button type="button" class="btn btn-light"><i class="far fa-edit fa-lg"></i> Edytuj Raporty</button>     
