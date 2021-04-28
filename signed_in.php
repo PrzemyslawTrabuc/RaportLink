@@ -25,7 +25,12 @@ if($_SESSION['uname']=="")
         while($row = mysqli_fetch_array($result)){
           $name = $row['nazwa'];
           $id = $row['nrid'];
-          echo "<button name=$id type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src='images/test.jpg'></img><br><br>";
+          $idimg = $row['nrid_zdjecie'];
+          $sql_query = "select * from zdjecie where nrid = '$idimg'";
+          $result2 = mysqli_query($link,$sql_query);
+          $row2 = mysqli_fetch_array($result2);
+          $img = $row2['nazwa'];
+          echo "<button name=$id value=$img type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src=$img></img><br><br>";
         } 
       ?>
       </form>    
