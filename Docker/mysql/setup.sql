@@ -340,9 +340,9 @@ COMMIT;
 --
 -- Ograniczenia dla tabeli `firma`
 --
-ALTER TABLE `raportlink_db`.`firma`
-  ADD CONSTRAINT `firma_ibfk_1` FOREIGN KEY (`nrid_zdjecie`) REFERENCES `zdjecie` (`nrid`);
-COMMIT;
+-- ALTER TABLE `raportlink_db`.`firma`
+--   ADD CONSTRAINT `firma_ibfk_1` FOREIGN KEY (`nrid_zdjecie`) REFERENCES `zdjecie` (`nrid`);
+-- COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
@@ -358,8 +358,8 @@ INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `log
 INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('3', '3', 'admin2', 'admin2','','2021-04-15');
 INSERT INTO `raportlink_db`.`dane_do_logowania` (`nrid`, `nrid_pracownika`, `login`, `haslo`, `email`,`ostatnia_zmiana_hasla`) VALUES ('4', '4', 'admin3', 'admin3','','2021-04-15');
 
-INSERT INTO `firma` (`nrid`, `nrid_zdjecie`, `nazwa`, `adr_kod_pocztowy`, `adr_miasto`, `adr_ulica`, `adr_numer`) VALUES ('1', '1', 'firma 2', '54321', 'op', 'op', '2');
-INSERT INTO `firma` (`nrid`, `nrid_zdjecie`, `nazwa`, `adr_kod_pocztowy`, `adr_miasto`, `adr_ulica`, `adr_numer`) VALUES ('2', '2', 'firma 2', '54321', 'op', 'op', '2');
+INSERT INTO `raportlink_db`.`firma` (`nrid`, `nrid_zdjecie`, `nazwa`, `adr_kod_pocztowy`, `adr_miasto`, `adr_ulica`, `adr_numer`) VALUES ('1', '1', 'firma 1', '54321', 'op', 'op', '2');
+INSERT INTO `raportlink_db`.`firma` (`nrid`, `nrid_zdjecie`, `nazwa`, `adr_kod_pocztowy`, `adr_miasto`, `adr_ulica`, `adr_numer`) VALUES ('2', '2', 'firma 2', '54321', 'op', 'op', '2');
 
-INSERT INTO `zdjecie` (`nrid`, `nazwa`, `szerokosc`, `wysokosc`) VALUES ('1', 'images/Raport_Link_logo_light.svg', '1', '1');
-INSERT INTO `zdjecie` (`nrid`, `nazwa`, `szerokosc`, `wysokosc`) VALUES ('2', 'images/test.jpg', '1', '1');
+INSERT INTO `raportlink_db`.`zdjecie` (`nrid`, `nazwa`, `szerokosc`, `wysokosc`) VALUES ('1', 'images/Raport_Link_logo_light.svg', '1', '1');
+INSERT INTO `raportlink_db`.`zdjecie` (`nrid`, `nazwa`, `szerokosc`, `wysokosc`) VALUES ('2', 'images/test.jpg', '1', '1');
