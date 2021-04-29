@@ -19,7 +19,7 @@ if(!empty($_ENV['MYSQL_ROOT_PASSWORD'])){
 if(!empty($_ENV['MYSQL_DB'])){
     $DB = $_ENV['MYSQL_DB'];
 } else {
-    $DB = 'raportlink';
+    $DB = 'raportlink_db';
 }
 
 /* Attempt to connect to MySQL database */

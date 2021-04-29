@@ -122,8 +122,9 @@ function showFileName( event ) {
 }
 
 </script>
-        <div class="input-group mb-3 px-2 py-2 rounded-pill bg-white shadow-sm">
-                    <input id="upload" type="file" onchange="readURL(this);" class="form-control border-0">
+        <div>
+                    <input id="upload" type="file" onchange="readURL(this);" class="btn btn-primary" hidden/>
+                    <label class="btn btn-primary" id="upload_label" for="upload">Wybierz plik</label>
         </div>
 
         <!-- Uploaded image area-->
