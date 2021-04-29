@@ -20,7 +20,7 @@ body
     min-width: auto;
     min-height: auto;   
     margin-top: 6%;
-    margin-bottom: 6%;
+    margin-bottom: 3%;
     
 }
 #buttons
@@ -89,7 +89,7 @@ align-content: center;
     clear: both;
     padding:20px 30px 20px 30px;
     background-color: #ffffff;    
-    border-radius: 10px;
+    border-radius: 1px;
     width: 800px;    
     overflow: auto;
     max-height: 500px;

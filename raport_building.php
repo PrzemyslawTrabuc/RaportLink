@@ -13,7 +13,8 @@ if($_SESSION['uname']=="")
         <link rel="stylesheet" href="custom_css\custom_css.css">  
         <script src="node_modules\jquery\dist\jquery.min.js"></script>  
         <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-        <script src="scripts\add_event.js"></script>          
+        <script src="scripts\add_event.js"></script>     
+        <script src="scripts\add_photo.js"></script>     
              
     </head>
     <body>      
@@ -128,13 +129,21 @@ function showFileName( event ) {
         </div>
 
         <!-- Uploaded image area-->
+        <div class="form-group">
+            <label for="recipient-name" class="col-form-label">Czas:</label>
+            <input type="text" class="form-control" id="time_photo">
+          </div>
+          <div class="form-group">
+            <label for="message-text" class="col-form-label">Zdarzenie:</label>
+            <textarea class="form-control" id="event_photo"></textarea>
+          </div>
         <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
 
         </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
-        <button type="button" name="add_event" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
+        <button type="button" name="add_photo" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
       </div>
     </div>
   </div>
