@@ -83,6 +83,7 @@ align-content: center;
 {
     margin-left:auto;
     margin-right: auto;
+    margin:2%;
     margin-top:50px;
     align-content: center;
     text-align: justify;      
@@ -90,7 +91,7 @@ align-content: center;
     padding:20px 30px 20px 30px;
     background-color: #ffffff;    
     border-radius: 1px;
-    width: 800px;    
+    width: auto;    
     overflow: auto;
     max-height: 500px;
 }
