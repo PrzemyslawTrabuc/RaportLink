@@ -59,7 +59,7 @@ if($_SESSION['uname']=="")
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Czas:</label>
-            <input type="text" class="form-control" id="time">
+            <input type="time" class="form-control" id="time">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Zdarzenie:</label>
@@ -132,7 +132,7 @@ function showFileName( event ) {
         <!-- Uploaded image area-->
         <div class="form-group">
             <label for="recipient-name" class="col-form-label">Czas:</label>
-            <input type="text" class="form-control" id="time_photo">
+            <input type="time" class="form-control" id="time_photo">
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Zdarzenie:</label>
