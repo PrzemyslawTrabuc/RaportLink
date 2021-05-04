@@ -36,8 +36,7 @@ if($_SESSION['uname']=="")
        <div id="Raport">
        <div id="raport_header"> 
          <?php
-         echo '<img class="raport_header" src='.$_SESSION['logo'].'></img>';
-        
+          echo '<img class="raport_header" src='.$_SESSION['logo'].'></img>';
          ?>
          </div>        
         <div id="Raport_footer">
@@ -87,7 +86,6 @@ if($_SESSION['uname']=="")
       <div class="modal-body">
         <form>
 <script>
-  
 /*  ==========================================
     SHOW UPLOADED IMAGE
 * ========================================== */
