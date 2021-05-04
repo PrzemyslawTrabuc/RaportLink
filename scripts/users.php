@@ -52,15 +52,15 @@ if($_SESSION['uname']=="")
         </button>
       </div>
       <div class="modal-body">
-        <form action="redirect_to_signed_in.php" method="POST">
-            <label for="fname">Imie:</label>
-            <input type="text" class="form-control" id="fname" name="fname" required>
-            <label for="fname">Nazwisko:</label>
-            <input type="text" class="form-control" id="fname" name="fname" required>
-            <label for="fname">Login:</label>
-            <input type="text" class="form-control" id="fname" name="fname" required>
-            <label for="fname">Hasło:</label>
-            <input type="text" class="form-control" id="fname" name="fname" required>
+        <form action="create_user.php" method="POST">
+            <label for="name">Imie:</label>
+            <input type="text" class="form-control" id="name" name="name" required>
+            <label for="surname">Nazwisko:</label>
+            <input type="text" class="form-control" id="surname" name="surname" required>
+            <label for="login">Login:</label>
+            <input type="text" class="form-control" id="login" name="login" required>
+            <label for="password">Hasło:</label>
+            <input type="text" class="form-control" id="password" name="password" required>
             <button type="submit" class="btn btn-light"><i class="far fa-edit fa-lg"></i> Dodaj</button>
         </form>
       </div>
