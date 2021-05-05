@@ -5,8 +5,8 @@ if($_SESSION['uname']=="")
 {  
   header('Location: index.php');
 }
-include "config.php"; 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+    include "config.php"; 
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $login = $_POST['login'];
