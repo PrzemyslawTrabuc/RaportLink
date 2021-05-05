@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         $sql2 = "INSERT INTO dane_do_logowania (nrid_pracownika, login, haslo, email, ostatnia_zmiana_hasla) VALUES ('$cnt', '$login', '$password', 'test@mail.co','2021-04-15')";
         if (mysqli_query($link, $sql2) === TRUE) {
-            header("location: users.php");
+            header("location: ../users.php");
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }

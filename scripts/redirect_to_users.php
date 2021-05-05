@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $_SESSION['name'] = $row['Imie'];
       $_SESSION['surname'] = $row['Nazwisko'];
 
-      header("location: users.php");
+      header("location: ../users.php");
       exit;
     }
   }else{
@@ -34,7 +34,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_SESSION['id'])){
       unset($_SESSION['id']);
     }
-    header("location: users.php");
+    header("location: ../users.php");
     exit;
   }
 }else {
