@@ -38,7 +38,17 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     exit;
   }
 }else {
-  echo "Error...";
+  if(isset($_SESSION['name'])){
+    unset($_SESSION['name']);
+  }
+  if(isset($_SESSION['surname'])){
+    unset($_SESSION['surname']);
+  }
+  if(isset($_SESSION['id'])){
+    unset($_SESSION['id']);
+  }
+  header("location: users.php");
+  exit;
 }
 
 // Redirect to page

@@ -53,13 +53,12 @@ if($_SESSION['uname']=="")
         </form>
        </div>
 
-
 <!--------------------------------------------------------------------------------->
 <div class="modal fade" id="oldUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Nowy użytkownik</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edytuj użytkownika</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -70,7 +69,7 @@ if($_SESSION['uname']=="")
               $id = $_SESSION['id'];
               $name = $_SESSION['name'];
               $surname = $_SESSION['surname'];
-              echo "<input type='hidden' class='form-control' id='id' value='$id' name='id'>",
+              echo "<input type='hidden' class='form-control' id='nrid' value='$id' name='nrid'>",
               "<label for='name'>Imie: </label>",
               "<input type='text' class='form-control' id='name' value='$name' name='name'>",
               "<label for='surname'>Nazwisko: </label>",
