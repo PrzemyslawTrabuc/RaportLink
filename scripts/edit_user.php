@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         mysqli_query($link, $sql2);
     }
     if (mysqli_query($link, $sql) === TRUE) {
-        header("location: redirect_to_users.php");
+        header("location: ../redirect_to_users.php");
         exit;
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
