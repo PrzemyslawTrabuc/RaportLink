@@ -104,7 +104,7 @@ if($_SESSION['uname']=="")
         </button>
       </div>
       <div class="modal-body">
-        <form action="scripts/edit_user.php" method="POST">
+        <form action="scripts/create_user.php" method="POST">
         <div class="form-group">
             <label for="name">Imie:</label>
             <input type="text" class="form-control" id="name" name="name" required>
