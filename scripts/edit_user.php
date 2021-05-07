@@ -11,7 +11,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $password = $_POST['password'];
-    $id = $_POST['nrid'];
+    $id = $_POST['id'];
 
     if($password == ""){
         $sql = "update pracownicy set Imie='$name', Nazwisko='$surname' where nrid='$id'";
@@ -32,7 +32,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           if(isset($_SESSION['id'])){
             unset($_SESSION['id']);
           }
-          header("location: users.php");
+          header("location: ../users.php");
           exit;
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;
@@ -47,7 +47,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       if(isset($_SESSION['id'])){
         unset($_SESSION['id']);
       }
-      header("location: users.php");
+      header("location: ../users.php");
       exit;
 }
 
