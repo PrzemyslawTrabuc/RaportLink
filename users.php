@@ -81,7 +81,7 @@ if($_SESSION['uname']=="")
               "<div class='form-group'><label for='surname'>Nazwisko: </label>",
               "<input type='text' class='form-control' id='surname' value='$surname' name='surname'></div>",
               "<div class='form-group'><label for='password'>Hasło:</label>",
-              "<input type='text' class='form-control' id='password' name='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Minimum 8 letters, 1 upper case, 1 number and 1 special character'></div>";             
+              "<input type='text' class='form-control' id='password' name='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Minimum 8 letters, 1 upper case and 1 number'></div>";             
           ?> 
           <br>
           <div class="modal-footer">          
@@ -119,7 +119,7 @@ if($_SESSION['uname']=="")
             </div>
             <div class="form-group">
             <label for="password">Hasło:</label>
-            <input type="text" class="form-control" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Minimum 8 letters, 1 upper case, 1 number and 1 special character">
+            <input type="text" class="form-control" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Minimum 8 letters, 1 upper case and 1 number">
             </div> 
             <br>
       <div class="modal-footer">
