@@ -31,6 +31,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
         echo "New record created successfully";  
+        header("location: ../users.php");
         $_SESSION['users_edit_falg']=1;     
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
