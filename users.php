@@ -28,6 +28,7 @@ if($_SESSION['uname']=="")
 
     </head>
     <body>
+    <div id="alert" class="alert alert-success " role="alert"> Zmiany w użytkownikach wprowadzone </div>
         <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
         <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
         <div class="buttons_middle">     
@@ -138,9 +139,17 @@ if($_SESSION['uname']=="")
           {  
             echo "<script type='text/javascript'>",
               "openModal();",
-            "</script>";
+            "</script>";                     
           }
         ?>
+        <?php
+$_SESSION['users_edit_falg'];     
+if($_SESSION['users_edit_falg'] == 1)
+{  
+echo "<script type='text/javascript'>","document.getElementById('alert').style.display = 'block';","</script>";
+$_SESSION['users_edit_falg']=0;
+}
+?>
 
     </body>
 </html>

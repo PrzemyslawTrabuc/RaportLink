@@ -11,6 +11,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $surname = $_POST['surname'];
     $login = $_POST['login'];
     $password = $_POST['password'];
+    $users_edit_falg = 0;
+    $_SESSION['users_edit_falg']=0;
 
     $sql = "INSERT INTO pracownicy (imie, nazwisko, rola_w_systemie) VALUES ('$name', '$surname', 0)";
 
@@ -24,10 +26,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $sql2 = "INSERT INTO dane_do_logowania (nrid_pracownika, login, haslo, email, ostatnia_zmiana_hasla) VALUES ('$cnt', '$login', '$password', 'test@mail.co','2021-04-15')";
         if (mysqli_query($link, $sql2) === TRUE) {
             header("location: ../users.php");
+           
         } else {
             echo "Error: " . $sql . "<br>" . $conn->error;
         }
-        echo "New record created successfully";
+        echo "New record created successfully";  
+        $_SESSION['users_edit_falg']=1;     
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
