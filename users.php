@@ -142,9 +142,8 @@ if($_SESSION['uname']=="")
             "</script>";                     
           }
         ?>
-        <?php
-$_SESSION['users_edit_falg'];     
-if($_SESSION['users_edit_falg'] == 1)
+        <?php   
+if(@$_SESSION['users_edit_flag'] == 1)
 {  
 echo "<script type='text/javascript'>","document.getElementById('alert').style.display = 'block';","</script>";
 $_SESSION['users_edit_falg']=0;
