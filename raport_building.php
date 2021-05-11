@@ -25,15 +25,19 @@ if($_SESSION['uname']=="")
      <div class="buttons_side"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
       <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button> 
+      <br>
+        <button type="bytton" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>    
         </div>      
     <!-----------side buttons--->
      <div class="buttons_middle"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
       <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button>
-      <br>    
       <br>
       <form action="scripts/logout.php">
         <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
+      </form>
+      <form action="scripts/redirect_to_signed_in.php">
+        <button type="submit" class="btn btn-light"><i class="fas fa-sign-out-alt fa-lg"></i> Powrót</button>
       </form>
         <button type="bytton" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>
        </div>
