@@ -16,7 +16,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     if($password == ""){
         $sql = "update pracownicy set Imie='$name', Nazwisko='$surname' where nrid='$id'";
-        //$_SESSION['users_edit_falg']=1;
+        $_SESSION['users_edit_falg']=1;
     }else{
         $sql = "update pracownicy set Imie='$name', Nazwisko='$surname' where nrid='$id'";
         if(strlen($password) > 5 && !ctype_space($password) && !str_contains($password, ' ')){
