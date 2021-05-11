@@ -44,13 +44,15 @@ if($_SESSION['uname']=="")
                   echo "<button name='id' value=$id type='submit' class='btn btn-primary'><i class='fas fa-user fa-lg'></i> $name $surname</button><br>";
               } 
           ?>
+          <br>
         </form>
         <button class="btn btn-light" data-toggle="modal" data-target="#newUser"><i class="fas fa-user-plus fa-lg"></i> Nowy użytkownik </button>
         <form action="scripts/redirect_to_signed_in.php" method="POST">
             <button type="submit" class="btn btn-light"><i class="far fa-arrow-alt-circle-left fa-lg"></i> Powrót</button>
         </form> 
         <form action="scripts/logout.php">
-        <p style="margin-top: 100px;"></p><button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button></p>
+        <hr>
+        <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button></p>
         </form>
        </div>
 

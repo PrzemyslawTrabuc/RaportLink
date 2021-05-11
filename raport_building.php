@@ -32,14 +32,16 @@ if($_SESSION['uname']=="")
      <div class="buttons_middle"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
       <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button>
-      <br>
-      <form action="scripts/logout.php">
-        <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
-      </form>
+        <br>
+      <br>      
       <form action="scripts/redirect_to_signed_in.php">
         <button type="submit" class="btn btn-light"><i class="fas fa-sign-out-alt fa-lg"></i> Powrót</button>
       </form>
         <button type="bytton" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>
+        <hr>
+        <form action="scripts/logout.php">
+        <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
+      </form>
        </div>
        <script>
         function printDiv(divName) {
