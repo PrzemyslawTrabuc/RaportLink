@@ -92,8 +92,7 @@ align-content: center;
     background-color: #ffffff;    
     border-radius: 1px;
     width: auto;    
-    overflow: auto;
-    max-height: 500px;
+    overflow: auto;   
 }
 .raport_header 
 {
@@ -132,4 +131,15 @@ text-align: left;
 {
     text-align: justify;
     font-size: 16px;
+}
+.buttons_side
+{   
+    top:2vw;
+    right:8vw;
+    display: none;  
+    clear:both; 
+    position:fixed;
+    float:right;
+    max-width:100px;
+    text-align: right;      
 }

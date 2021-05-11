@@ -21,6 +21,12 @@ if($_SESSION['uname']=="")
      <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
      <p class="welcome_text"><?php echo "Tworzysz raport dla ".$_SESSION['uname']  ?></p> 
+     <!-----------side buttons--->
+     <div class="buttons_side"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
+      <br>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button> 
+        </div>      
+    <!-----------side buttons--->
      <div class="buttons_middle"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
       <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button>
@@ -86,6 +92,14 @@ if($_SESSION['uname']=="")
       <div class="modal-body">
         <form>
 <script>
+  $(document).scroll(function() {
+  var y = $(this).scrollTop();
+  if (y > 700) {
+    $('.buttons_side').fadeIn();
+  } else {
+    $('.buttons_side').fadeOut();
+  }
+});
 /*  ==========================================
     SHOW UPLOADED IMAGE
 * ========================================== */
@@ -120,6 +134,8 @@ function showFileName( event ) {
   var fileName = input.files[0].name;
   infoArea.textContent = 'File name: ' + fileName;
 }
+
+
 
 </script>
         <div>
