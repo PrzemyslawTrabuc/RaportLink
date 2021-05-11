@@ -122,9 +122,9 @@ align-content: center;
     background: #474747; 
   }
 
-.event h4
+.event h1
 {
-text-align: left;
+text-align: center;
 }
 
 .event
@@ -142,4 +142,17 @@ text-align: left;
     float:right;
     max-width:100px;
     text-align: right;      
+}
+.raport_img
+{
+    margin-left:auto;
+    margin-right: auto;
+    text-align: center;
+}
+.raport_img img
+{  
+    max-height: 600px;
+    max-width:800px;
+    margin-top:30px;    
+    margin-bottom:50px; 
 }
