@@ -29,10 +29,18 @@ if($_SESSION['uname']=="")
       <form action="scripts/logout.php">
         <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
       </form>
-      <form action="scripts/logout.php">
-        <button type="submit" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>
-      </form>
+        <button type="bytton" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>
        </div>
+       <script>
+        function printDiv(divName) {
+          var printContents = document.getElementById(divName).innerHTML;
+          var originalContents = document.body.innerHTML;
+
+          document.body.innerHTML = printContents;
+          window.print();
+          document.body.innerHTML = originalContents;
+        }
+       </script>
        <div id="Raport">
        <div id="raport_header"> 
          <?php
@@ -90,6 +98,7 @@ if($_SESSION['uname']=="")
     SHOW UPLOADED IMAGE
 * ========================================== */
 function readURL(input) {
+  if(input)
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
@@ -103,9 +112,11 @@ function readURL(input) {
 }
 
 $(function () {
+  if(input != null){
     $('#upload').on('change', function () {
         readURL(input);             
     });
+  }
 });
 
 /*  ==========================================
