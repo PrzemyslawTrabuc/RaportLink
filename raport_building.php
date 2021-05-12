@@ -17,16 +17,18 @@ if($_SESSION['uname']=="")
         <script src="scripts\add_photo.js"></script>     
              
     </head>
-    <body>      
+    <body>    
+    <div id="alert" class="alert alert-warning" role="alert"> Uzupełnij wszystkie pola </div>  
      <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
      <p class="welcome_text"><?php echo "Tworzysz raport dla ".$_SESSION['uname']  ?></p> 
      <!-----------side buttons--->
-     <div class="buttons_side"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
+     <div class="buttons_side">
+     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
       <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button> 
       <br>
-        <button type="bytton" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>    
+        <button type="button" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>    
         </div>      
     <!-----------side buttons--->
      <div class="buttons_middle"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
@@ -78,15 +80,15 @@ if($_SESSION['uname']=="")
         <form>
           <div class="form-group">
             <label for="recipient-name" class="col-form-label">Czas:</label>
-            <input type="time" class="form-control" id="time">
+            <input type="time" class="form-control" id="time" required>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Zdarzenie:</label>
-            <textarea class="form-control" id="event"></textarea>
+            <textarea class="form-control" id="event" required></textarea>
           </div>
         </form>
       </div>
-      <div class="modal-footer">
+      <div class="modal-footer">      
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
         <button type="button" name="add_event" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
       </div>
