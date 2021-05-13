@@ -41,9 +41,10 @@ if($_SESSION['uname']=="")
       <br>
       <form action="scripts/redirect_to_users.php" method="POST">
         <button type="submit" class="btn btn-light"><i class="fas fa-users fa-lg"></i> Użytkownicy</button>     
-      </form>  
+      </form>     
       <form action="scripts/logout.php">
-        <p style="margin-top: 100px;"></p><button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button></p>
+      <hr>
+        <p></p><button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button></p>
         </form>
        </div>
     </body>
