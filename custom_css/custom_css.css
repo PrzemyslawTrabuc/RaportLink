@@ -154,5 +154,12 @@ text-align: center;
     max-height: 600px;
     max-width:800px;
     margin-top:30px;    
-    margin-bottom:50px; 
+    margin-bottom:25px; 
+}
+.time_stamp 
+{
+    color:gray;
+    text-align: right;
+    font-size:10px;
+  
 }
