@@ -8,7 +8,7 @@ $(document).ready(function addPhoto() {
    {   
       var time_stamp = new Date(); 
       var date = time_stamp.getFullYear()+'-'+(time_stamp.getMonth()+1)+'-'+time_stamp.getDate()+' '+time_stamp.getHours()+':'+time_stamp.getMinutes()+':'+time_stamp.getSeconds();
-      var domElement = $('<div class="event"><h3><i class="far fa-clock"></i> '+time_photo+'</h3><br>'+text_photo+'</div><div class="raport_img"><img src='+img+'><p class="time_stamp">'+date+'</p></div><hr><br>');           
+      var domElement = $('<div class="event"><h3><i class="far fa-clock"></i> '+time_photo+'</h3><br>'+text_photo+'<div class="raport_img"><img src='+img+'></img><p class="time_stamp">'+date+'<button type="button" name="delete_event" class="btn btn-danger" onclick="return this.parentNode.parentNode.parentNode.remove();">Usuń</button></p></div>');           
       $("div[id='Raport_footer']").before(domElement);        
       document.getElementById("time_photo").value="";
       document.getElementById("event_photo").value="";    

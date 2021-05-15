@@ -14,7 +14,7 @@ if($_SESSION['uname']=="")
         <script src="node_modules\jquery\dist\jquery.min.js"></script>  
         <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
         <script src="scripts\add_event.js"></script>     
-        <script src="scripts\add_photo.js"></script>     
+        <script src="scripts\add_photo.js"></script>           
              
     </head>
     <body>    
