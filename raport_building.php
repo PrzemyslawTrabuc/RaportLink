@@ -107,61 +107,12 @@ if($_SESSION['uname']=="")
       </div>
       <div class="modal-body">
         <form>
-<script>
-  $(document).scroll(function() {
-  var y = $(this).scrollTop();
-  if (y > 700) {
-    $('.buttons_side').fadeIn();
-  } else {
-    $('.buttons_side').fadeOut();
-  }
-});
-/*  ==========================================
-    SHOW UPLOADED IMAGE
-* ========================================== */
-function readURL(input) {
-  if(input)
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#imageResult')
-                .attr('src', e.target.result);                                
-        };
-       reader.readAsDataURL(input.files[0]);   
-    
-    }
-}
-
-$(function () {
-  if(input != null){
-    $('#upload').on('change', function () {
-        readURL(input);             
-    });
-  }
-});
-
-/*  ==========================================
-    SHOW UPLOADED IMAGE NAME
-* ========================================== */
-var input = document.getElementById( 'upload' );
-var infoArea = document.getElementById( 'upload-label');
-
-input.addEventListener( 'change', showFileName );
-function showFileName( event ) {
-  var input = event.srcElement;
-  var fileName = input.files[0].name;
-  infoArea.textContent = 'File name: ' + fileName;
-}
-
-
-
-</script>
+        <script src="scripts/imageModalHandle.js"></script>
         <div>
                     <input id="upload" type="file" onchange="readURL(this);" class="btn btn-primary" hidden/>
                     <label class="btn btn-primary" id="upload_label" for="upload">Wybierz plik</label>
+                    <button type="button" id="open-editor"class="btn btn-primary" data-toggle="modal" data-target="#editImageModal" hidden><i class="far fa-image fa-lg"></i> Edytuj grafikę</button> 
         </div>
-
         <!-- Uploaded image area-->
         <div class="form-group">
             <label for="recipient-name" class="col-form-label">Czas:</label>
@@ -183,7 +134,57 @@ function showFileName( event ) {
   </div>
 </div>
 <!--------------------------------------------------------------------------------->
+<div class="modal fade" id="editImageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edytuj grafikę</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="app">
+              <div class="controls">
+                  <div class="type">
+                      <input type="radio" id="pen" value="0" checked name="choice">
+                      <label for="pen-pencil">
+                          <i class="fa fa-pencil">Pen</i>
+                      </label>
+                      <input type="radio" id="rect" value="1" name="choice">
+                      <label for="pen-brush">
+                          <i class="fa fa-paint-brush">Rect</i>
+                      </label>
+                  </div>
+                  <div class="size">
+                      <label for="pen-size">Size</label>
+                      <input type="range" id="pen-size" min="1" max="20" value="5">
+                      <label for="pen-size" id="pen-size-val">5</label>
+                  </div>
+                  <div class="color">
+                      <label for="pen-color">Color</label>
+                      <input type="color" id="pen-color" value="#000">
+                  </div>
+                  <div class="actions">
+                      <button id="reset-canvas">Reset</button>
+                  </div>
+              </div>
+              <div id="canvas-wrapper">
+                  <canvas id="img-edit-canvas"></canvas>
+              </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
+        <button type="button" name="add_photo" id="save-image" class="btn btn-primary" data-dismiss="modal">Zapisz</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!--------------------------------------------------------------------------------->
 
-
+      <script src="scripts/edit_image.js"></script>
     </body>
 </html>
