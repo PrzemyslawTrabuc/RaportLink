@@ -35,8 +35,8 @@ if($_SESSION['uname']=="")
           } 
         ?>
       </form>
-      <form action="" method="POST">
-        <button type="submit" class="btn btn-light"><i class="far fa-edit fa-lg"></i> Edytuj Raporty</button>
+      <form action="scripts/redirect_to_company.php" method="POST">
+        <button type="submit" class="btn btn-light"><i class="far fa-edit fa-lg"></i>Firmy</button>
       </form>  
       <br>
       <form action="scripts/redirect_to_users.php" method="POST">
