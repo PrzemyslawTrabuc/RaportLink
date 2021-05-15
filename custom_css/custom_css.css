@@ -163,6 +163,10 @@ text-align: center;
     margin-bottom:25px;
     font-style: italic;
 }
+#del_btn
+{
+    min-width:auto !important;   
+}
 
 @media print
 {
