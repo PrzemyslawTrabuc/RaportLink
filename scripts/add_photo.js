@@ -14,6 +14,7 @@ $(document).ready(function addPhoto() {
       document.getElementById("event_photo").value="";    
       img = document.getElementById("imageResult").src = "";
       document.getElementById('alert').style.display = 'none';
+      document.getElementById('open-editor').hidden = 1;
    }else
    {
     document.getElementById('alert').style.display = 'block';

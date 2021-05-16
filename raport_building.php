@@ -178,7 +178,7 @@ if($_SESSION['uname']=="")
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
-        <button type="button" name="add_photo" id="save-image" class="btn btn-primary" data-dismiss="modal">Zapisz</button>
+        <button type="button" id="save-image" class="btn btn-primary" data-dismiss="modal">Zapisz</button>
       </div>
     </div>
   </div>
