@@ -13,8 +13,8 @@ function resetModal(){
 /*  ==========================================
     SHOW UPLOADED IMAGE
 * ========================================== */
-function readURL(input) {
-  if(input)
+function readURL(input) {  
+    if(input)
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
@@ -22,18 +22,18 @@ function readURL(input) {
             $('#imageResult')
                 .attr('src', e.target.result);                                
         };
-       reader.readAsDataURL(input.files[0]);   
-
+       reader.readAsDataURL(input.files[0]); 
        document.getElementById( 'open-editor' ).hidden = 0;
-    }
+       input.value="";
+    }  
 }
 
 $(function () {
   if(input != null){
     $('#upload').on('change', function () {
-        readURL(input);             
+        readURL(input);                 
     });
-  }
+  }  
 });
 
 /*  ==========================================
@@ -44,7 +44,7 @@ var infoArea = document.getElementById( 'upload-label');
 
 input.addEventListener( 'change', showFileName );
 function showFileName( event ) {
-  var input = event.srcElement;
-  var fileName = input.files[0].name;
+  input = event.srcElement;
+  fileName = input.files[0].name;
   infoArea.textContent = 'File name: ' + fileName;
 }
