@@ -96,13 +96,28 @@ window.addEventListener("load", () => {
         loadImage();
     }
 
-    function getMousePos(e) {
-        var rect = canvas.getBoundingClientRect();
+    // function getMousePos(e) {
+    //     var rect = canvas.getBoundingClientRect();
+
+    //     console.log(rect.left);
+    //     console.log(e.clientX);
+
+    //     return {
+    //       x: e.clientX - rect.left,
+    //       y: e.clientY - rect.top
+    //     };
+    // }
+
+    function  getMousePos(e) {
+        var rect = canvas.getBoundingClientRect(), // abs. size of element
+            scaleX = canvas.width / rect.width,    // relationship bitmap vs. element for X
+            scaleY = canvas.height / rect.height;  // relationship bitmap vs. element for Y
+      
         return {
-          x: e.clientX - rect.left,
-          y: e.clientY - rect.top
-        };
-    }
+          x: (e.clientX - rect.left) * scaleX,   // scale mouse coordinates after they have
+          y: (e.clientY - rect.top) * scaleY     // been adjusted to be relative to element
+        }
+      }
 
     function updateCanvasSize(x, y){
         canvas.height = x;
