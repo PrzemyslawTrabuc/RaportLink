@@ -11,10 +11,11 @@ $(document).ready(function addPhoto() {
       var domElement = $('<div class="event"><h3><i class="far fa-clock"></i> '+time_photo+'</h3><br>'+text_photo+'<div class="raport_img"><img src='+img+'></img><p class="time_stamp">'+date+'<button type="button" name="delete_event" id="del_btn" class="btn btn-danger" onclick="return this.parentNode.parentNode.parentNode.remove();"><i class="fas fa-trash fa-lg"></i></button></p></div>');           
       $("div[id='Raport_footer']").before(domElement);        
       document.getElementById("time_photo").value="";
-      document.getElementById("event_photo").value="";    
-      img = document.getElementById("imageResult").src = "";
+      document.getElementById("event_photo").value="";   
       document.getElementById('alert').style.display = 'none';
       document.getElementById('open-editor').hidden = 1;
+      img = document.getElementById("imageResult").src = "";       
+      console.log(img);   
    }else
    {
     document.getElementById('alert').style.display = 'block';

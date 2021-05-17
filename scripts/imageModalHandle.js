@@ -13,10 +13,8 @@ function resetModal(){
 /*  ==========================================
     SHOW UPLOADED IMAGE
 * ========================================== */
-function readURL(input) {
-  console.log("xd");
-  if(input)
-  console.log(input.files);
+function readURL(input) {  
+    if(input)
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
@@ -24,10 +22,10 @@ function readURL(input) {
             $('#imageResult')
                 .attr('src', e.target.result);                                
         };
-       reader.readAsDataURL(input.files[0]);   
-
+       reader.readAsDataURL(input.files[0]); 
        document.getElementById( 'open-editor' ).hidden = 0;
-    }
+       input.value="";
+    }  
 }
 
 // function reset(){
@@ -37,9 +35,9 @@ function readURL(input) {
 $(function () {
   if(input != null){
     $('#upload').on('change', function () {
-        readURL(input);             
+        readURL(input);                 
     });
-  }
+  }  
 });
 
 /*  ==========================================

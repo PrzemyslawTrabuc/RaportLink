@@ -122,7 +122,9 @@ if($_SESSION['uname']=="")
             <label for="message-text" class="col-form-label">Zdarzenie:</label>
             <textarea class="form-control" id="event_photo" required></textarea>
           </div>
-        <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+        <div class="image-area mt-4"><img id="imageResult" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
+
+        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
