@@ -1,5 +1,5 @@
-const canvas = document.getElementById('img-edit-canvas');
-const context = canvas.getContext("2d");
+var canvas = document.getElementById('img-edit-canvas');
+var context = canvas.getContext("2d");
 // var div = document.getElementById('rectSelect'), x1 = 0, y1 = 0, x2 = 0, y2 = 0;
 
 window.addEventListener("load", () => {
@@ -133,8 +133,7 @@ window.addEventListener("load", () => {
             context.drawImage(img, 0, 0);
             context.strokeStyle = color;
             context.lineWidth = size;
-        }
-        console.log(canvas);
+        }       
     };
 
     function saveImage(){

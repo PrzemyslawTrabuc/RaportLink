@@ -10,12 +10,9 @@ if($_SESSION['uname']=="")
     <head>     
         <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
-        <link rel="stylesheet" href="custom_css\custom_css.css">  
-        <script src="node_modules\jquery\dist\jquery.min.js"></script>  
-        <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>
-        <script src="scripts\add_event.js"></script>     
-        <script src="scripts\add_photo.js"></script>           
-             
+        <link rel="stylesheet" href="custom_css\custom_css.css">
+       <script src="node_modules\jquery\dist\jquery.min.js"></script>      
+       <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>         
     </head>
     <body>    
     <div id="alert" class="alert alert-warning" role="alert"> Uzupełnij wszystkie pola </div>  
@@ -28,33 +25,23 @@ if($_SESSION['uname']=="")
       <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button> 
       <br>
-        <button type="button" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>    
+        <button type="button" onclick="printContent('Raport');" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>    
         </div>      
     <!-----------side buttons--->
      <div class="buttons_middle"><button class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>
-      <br>
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#imageModal"><i class="far fa-image fa-lg"></i> Dodaj grafikę</button>
         <br>
       <br>      
       <form action="scripts/redirect_to_signed_in.php">
-        <button type="submit" class="btn btn-light"><i class="fas fa-sign-out-alt fa-lg"></i> Powrót</button>
-      </form>
-        <button type="bytton" onclick="printDiv('Raport')" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>
+        <button type="submit" class="btn btn-light"><i class="fas fa-arrow-left fa-lg"></i> Powrót</button>
+        <button type="button" onclick="printContent('Raport');" class="btn btn-info"><i class="fas fa-print fa-lg"></i> Drukuj</button>
+      </form>        
         <hr>
         <form action="scripts/logout.php">
         <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
+        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#imageModal"><i class="far fa-newspaper fa-lg"></i> Nowy raport</button>
       </form>
-       </div>
-       <script>
-        function printDiv(divName) {
-          var printContents = document.getElementById(divName).innerHTML;
-          var originalContents = document.body.innerHTML;
-
-          document.body.innerHTML = printContents;
-          window.print();
-          document.body.innerHTML = originalContents;
-        }
-       </script>
+       </div>     
        <div id="Raport">
        <div id="raport_header"> 
          <?php
@@ -111,8 +98,7 @@ if($_SESSION['uname']=="")
                     <input id="upload" type="file" class="btn btn-primary" hidden/>
                     <label class="btn btn-primary" id="upload_label" for="upload">Wybierz plik</label>
                     <button type="button" id="open-editor"class="btn btn-primary" data-toggle="modal" data-target="#editImageModal" hidden><i class="far fa-image fa-lg"></i> Edytuj grafikę</button> 
-        </div>
-        <script src="scripts/imageModalHandle.js"></script>
+        </div>        
         <!-- Uploaded image area-->
         <div class="form-group">
             <label for="recipient-name" class="col-form-label">Czas:</label>
@@ -185,7 +171,19 @@ if($_SESSION['uname']=="")
   </div>
 </div>
 <!--------------------------------------------------------------------------------->
-
-      <script src="scripts/edit_image.js"></script>
+      <script src="scripts\add_event.js"></script>     
+      <script src="scripts\add_photo.js"></script> 
+      <script src="scripts\imageModalHandle.js"></script> 
+      <script src="scripts\edit_image.js"></script> 
+      <script>
+      function printContent(el)
+      {      
+        var restorepage = $('body').html(); 
+        var printcontent = $('#' + el).clone();              
+        $('body').empty().html(printcontent);
+        window.print();              
+        $('body').html(restorepage);     
+      }          
+</script>      
     </body>
 </html>
