@@ -3,7 +3,7 @@ $(document).ready(function addPhoto() {
    var text_photo = document.getElementById("event_photo").value;
    var time_photo = document.getElementById("time_photo").value;  
    var img = document.getElementById("imageResult").src; 
-   console.log(img); 
+   // console.log(img); 
    if(time_photo != "" && text_photo !="" && img.includes("/Agile/RaportLink/raport_building.php") != true)
    {   
       var time_stamp = new Date(); 

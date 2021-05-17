@@ -107,29 +107,28 @@ if($_SESSION['uname']=="")
       </div>
       <div class="modal-body">
         <form>
-        <script src="scripts/imageModalHandle.js"></script>
         <div>
-                    <input id="upload" type="file" onchange="readURL(this);" class="btn btn-primary" hidden/>
+                    <input id="upload" type="file" class="btn btn-primary" hidden/>
                     <label class="btn btn-primary" id="upload_label" for="upload">Wybierz plik</label>
                     <button type="button" id="open-editor"class="btn btn-primary" data-toggle="modal" data-target="#editImageModal" hidden><i class="far fa-image fa-lg"></i> Edytuj grafikę</button> 
         </div>
+        <script src="scripts/imageModalHandle.js"></script>
         <!-- Uploaded image area-->
         <div class="form-group">
             <label for="recipient-name" class="col-form-label">Czas:</label>
-            <input type="time" class="form-control" id="time_photo">
+            <input type="time" class="form-control" id="time_photo" require>
           </div>
           <div class="form-group">
             <label for="message-text" class="col-form-label">Zdarzenie:</label>
-            <textarea class="form-control" id="event_photo"></textarea>
+            <textarea class="form-control" id="event_photo" required></textarea>
           </div>
         <div class="image-area mt-4"><img id="imageResult" src="#" alt="" class="img-fluid rounded shadow-sm mx-auto d-block"></div>
-
-        </form>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cofnij</button>
-        <button type="button" name="add_photo" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
+        <button type="submit" id="accept" name="add_photo" class="btn btn-primary" data-dismiss="modal">Dodaj</button>
       </div>
+      </form>
     </div>
   </div>
 </div>

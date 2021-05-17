@@ -14,7 +14,9 @@ function resetModal(){
     SHOW UPLOADED IMAGE
 * ========================================== */
 function readURL(input) {
+  console.log("xd");
   if(input)
+  console.log(input.files);
     if (input.files && input.files[0]) {
         var reader = new FileReader();
 
@@ -28,6 +30,10 @@ function readURL(input) {
     }
 }
 
+// function reset(){
+//   if(input.value != null && )
+// }
+
 $(function () {
   if(input != null){
     $('#upload').on('change', function () {
@@ -40,11 +46,16 @@ $(function () {
     SHOW UPLOADED IMAGE NAME
 * ========================================== */
 var input = document.getElementById( 'upload' );
-var infoArea = document.getElementById( 'upload-label');
+// var textarea = document.getElementById('');
+// var infoArea = document.getElementById( 'upload-label');
 
 input.addEventListener( 'change', showFileName );
+
+//document.getElementById( 'accept' ).addEventListener( 'accept', reset);
+
+
 function showFileName( event ) {
   var input = event.srcElement;
-  var fileName = input.files[0].name;
-  infoArea.textContent = 'File name: ' + fileName;
+  // var fileName = input.files[0].name;
+  // infoArea.textContent = 'File name: ' + fileName;
 }
