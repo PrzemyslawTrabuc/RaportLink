@@ -1,18 +1,15 @@
 var canvas = document.getElementById('img-edit-canvas');
 var context = canvas.getContext("2d");
 // var div = document.getElementById('rectSelect'), x1 = 0, y1 = 0, x2 = 0, y2 = 0;
+var color = "#ff0000";
+var size;
+var type = 0;
+var mousePos = {x:0, y:0};
 
-window.addEventListener("load", () => {
+window.addEventListener("change", () => {
 
-    var color = "#000";
-    var size = 5;
-    var type = 0;
-    var mousePos = {x:0, y:0};
-
-    updateCanvasSize(window.innerHeight, window.innerWidth);
-
-    context.strokeStyle = color;
-    context.lineWidth = size;
+    canvas = document.getElementById('img-edit-canvas');
+    context = canvas.getContext("2d");
 
     //variables
     let painting = false;
@@ -34,6 +31,7 @@ window.addEventListener("load", () => {
     }
 
     function endPosition(e){
+
         if(type == 0){
             context.beginPath();
         }
@@ -78,6 +76,7 @@ window.addEventListener("load", () => {
     function updateColor(){
         color = document.getElementById("pen-color").value;
         context.strokeStyle = color;
+        console.log(context.strokeStyle + "color updated");
     }
 
     function updateSize(){
@@ -133,7 +132,7 @@ window.addEventListener("load", () => {
             context.drawImage(img, 0, 0);
             context.strokeStyle = color;
             context.lineWidth = size;
-        }       
+        }
     };
 
     function saveImage(){
@@ -153,6 +152,26 @@ window.addEventListener("load", () => {
         div.style.height = y4 - y3 + 'px';
     }
 
+    function checkOptions(){
+        let col = document.getElementById("pen-color");
+        let penSize = document.getElementById("pen-size");
+        // let penType2 = document.getElementById("rect");
+        console.log(color +" var not updated " + col.value);
+        if(col.value != color){
+            console.log("pending...");
+            updateColor();
+        }
+        if(penSize.value != size){
+            updateSize();
+        }
+        // if(penType2.checked != type){
+        //     penType2.checked = 0;
+        //     document.getElementById("pen").checked = 1;
+        // }else{
+        //     type = 0;
+        // }
+    }
+
     //eventListeners
 
     canvas.addEventListener('mousedown', startPosition);
@@ -160,7 +179,7 @@ window.addEventListener("load", () => {
     canvas.addEventListener('mousemove', draw);
     canvas.addEventListener('mouseleave', endPosition);
 
-    document.getElementById("pen-color").addEventListener('change', updateColor);
+    document.getElementById("pen-color").addEventListener('input', updateColor);
     document.getElementById("pen-size").addEventListener('change', updateSize);
 
     document.getElementById("pen").addEventListener('change', updateType);
@@ -171,6 +190,7 @@ window.addEventListener("load", () => {
     document.getElementById("save-image").addEventListener('click', saveImage);
     document.getElementById("open-editor").addEventListener('click', loadImage);
 
+    checkOptions();
 });
 
 

@@ -97,7 +97,7 @@ if($_SESSION['uname']=="")
         <div>
                     <input id="upload" type="file" class="btn btn-primary" hidden/>
                     <label class="btn btn-primary" id="upload_label" for="upload">Wybierz plik</label>
-                    <button type="button" id="open-editor"class="btn btn-primary" data-toggle="modal" data-target="#editImageModal" hidden><i class="far fa-image fa-lg"></i> Edytuj grafikę</button> 
+                    <button type="button" id="open-editor" onclick="loadImage()" class="btn btn-primary" data-toggle="modal" data-target="#editImageModal" hidden><i class="far fa-image fa-lg"></i> Edytuj grafikę</button> 
         </div>        
         <!-- Uploaded image area-->
         <div class="form-group">
@@ -151,9 +151,9 @@ if($_SESSION['uname']=="")
                   </div>
                   <div class="color">
                       <label for="pen-color">Color</label>
-                      <input type="color" id="pen-color" value="#000">
+                      <input type="color" id="pen-color" value="#ff0000">
                   </div>
-                  <div class="actions">
+                  <div class="reset">
                       <button id="reset-canvas">Reset</button>
                   </div>
               </div>
