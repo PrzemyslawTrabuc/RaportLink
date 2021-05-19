@@ -146,7 +146,7 @@ if($_SESSION['uname']=="")
             </div> 
             <div class="form-group">
                 <label for="path">Logo:</label>
-                <input type="file" class="form-control" id="path" name="path" accept='image/png, image/jpeg' required>
+                <input type="file" class="form-control" id="path" name="path" size="25" accept='image/png, image/jpeg' required>
             </div> 
             <br>
             <div class="modal-footer">
