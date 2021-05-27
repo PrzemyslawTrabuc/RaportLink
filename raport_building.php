@@ -13,6 +13,7 @@ if($_SESSION['uname']=="")
         <link rel="stylesheet" href="custom_css\custom_css.css">
        <script src="node_modules\jquery\dist\jquery.min.js"></script>      
        <script src="node_modules\bootstrap\dist\js\bootstrap.min.js"></script>         
+       <script src="scripts/removeElement.js"></script>
     </head>
     <body>    
     <div id="alert" class="alert alert-warning" role="alert"> Uzupełnij wszystkie pola </div>  
@@ -39,9 +40,9 @@ if($_SESSION['uname']=="")
         <hr>
         <form action="scripts/logout.php">
         <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
-        <button type="button" class="btn btn-success" data-toggle="modal" data-target="#imageModal"><i class="far fa-newspaper fa-lg"></i> Nowy raport</button>
+        <button type="button" class="btn btn-success" id="new_raport"><i class="far fa-newspaper fa-lg"></i> Nowy raport</button>
       </form>
-       </div>     
+       </div>       
        <div id="Raport">
        <div id="raport_header"> 
          <?php
@@ -54,7 +55,7 @@ if($_SESSION['uname']=="")
       </div> 
       <script>
         if(sessionStorage && sessionStorage.getItem("raport"))
-          document.getElementById("Raport").innerHTML = sessionStorage.getItem("raport");
+        document.getElementById("Raport").innerHTML = JSON.parse(sessionStorage.getItem("raport"));
       </script>
 </div>
 <!--------------------------------------------------------------------------------->
