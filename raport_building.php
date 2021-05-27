@@ -51,7 +51,11 @@ if($_SESSION['uname']=="")
         <div id="Raport_footer">
         </div>
        </div>         
-</div> 
+      </div> 
+      <script>
+        if(sessionStorage && sessionStorage.getItem("raport"))
+          document.getElementById("Raport").innerHTML = sessionStorage.getItem("raport");
+      </script>
 </div>
 <!--------------------------------------------------------------------------------->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

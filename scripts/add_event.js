@@ -10,7 +10,10 @@ $(document).ready(function addEvent() {
       $("div[id='Raport_footer']").before(domElement);        
       document.getElementById("time").value="";
       document.getElementById("event").value="";
-      document.getElementById('alert').style.display = 'none';     
+      document.getElementById('alert').style.display = 'none';  
+      var raportHTML = document.getElementById("Raport");
+      var raport = raportHTML.innerHTML;
+      sessionStorage.setItem('raport', raport);
    }else
    {
     document.getElementById('alert').style.display = 'block';

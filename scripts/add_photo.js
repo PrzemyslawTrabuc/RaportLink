@@ -15,7 +15,9 @@ $(document).ready(function addPhoto() {
       document.getElementById('alert').style.display = 'none';
       document.getElementById('open-editor').hidden = 1;
       img = document.getElementById("imageResult").src = "";       
-      console.log(img);   
+      var raportHTML = document.getElementById("Raport");
+      var raport = raportHTML.innerHTML;
+      sessionStorage.setItem('raport', raport);
    }else
    {
     document.getElementById('alert').style.display = 'block';
