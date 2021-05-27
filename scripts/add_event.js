@@ -24,14 +24,17 @@ $(document).ready(function addEvent() {
 
  window.addEventListener("load", () => {
    function newRaport(){
-      if(sessionStorage && sessionStorage.getItem("raport"))
+      if(sessionStorage && sessionStorage.getItem("raport")){
          if (confirm("Jesteś pewny? Utracisz bezpowrotnie niedokończony raport")) {
             sessionStorage.removeItem("raport");
             window.location.reload();
-         } 
-   }
+            return true;
+         }
+         return false;
+      }
+      return true;
+   } 
    document.getElementById("new_raport").addEventListener('click', newRaport);
-   document.getElementById("logout_button").addEventListener('click', newRaport);
  });
 //  window.onbeforeunload = function (e) {
 //    sessionStorage.removeItem("raport");

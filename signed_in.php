@@ -11,7 +11,8 @@ if($_SESSION['uname']=="")
     <head>     
         <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
-        <link rel="stylesheet" href="custom_css\custom_css.css">        
+        <link rel="stylesheet" href="custom_css\custom_css.css">  
+        <script src="scripts/onLogout.js"></script>      
     </head>
     <body>
       <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
@@ -42,9 +43,10 @@ if($_SESSION['uname']=="")
       <form action="scripts/redirect_to_users.php" method="POST">
         <button type="submit" class="btn btn-light"><i class="fas fa-users fa-lg"></i> Użytkownicy</button>     
       </form>     
-      <form action="scripts/logout.php">
+
+      <form onclick="return logout()" action="scripts/logout.php" id="logout_form">
       <hr>
-        <p></p><button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button></p>
+        <p></p><button type="submit" class="btn btn-danger" id="logout_button"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button></p>
         </form>
        </div>
     </body>
