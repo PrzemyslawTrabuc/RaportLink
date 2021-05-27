@@ -1,7 +1,7 @@
 function logout(){
-    if(sessionStorage && sessionStorage.getItem("raport")){
+    if(sessionStorage && sessionStorage.getItem("currentRaport")){
        if (confirm("Jesteś pewny? Utracisz bezpowrotnie niedokończony raport")) {
-          sessionStorage.removeItem("raport");
+          sessionStorage.clear();
           return true;
        }
        return false;

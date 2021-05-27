@@ -13,7 +13,7 @@ $(document).ready(function addEvent() {
       document.getElementById('alert').style.display = 'none';  
       var raportHTML = document.getElementById("Raport");
       var raport = JSON.stringify(raportHTML.innerHTML);
-      sessionStorage.setItem('raport', raport);
+      sessionStorage.setItem(sessionStorage.getItem("currentRaport"), raport);
    }else
    {
     document.getElementById('alert').style.display = 'block';
@@ -26,7 +26,7 @@ $(document).ready(function addEvent() {
    function newRaport(){
       if(sessionStorage && sessionStorage.getItem("raport")){
          if (confirm("Jesteś pewny? Utracisz bezpowrotnie niedokończony raport")) {
-            sessionStorage.removeItem("raport");
+            sessionStorage.removeItem(sessionStorage.getItem("currentRaport"));
             window.location.reload();
             return true;
          }

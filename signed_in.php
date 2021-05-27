@@ -12,7 +12,8 @@ if($_SESSION['uname']=="")
         <link rel="stylesheet" href="node_modules\bootstrap\dist\css\bootstrap.css">
         <link rel="stylesheet" href="@fortawesome\fontawesome-free\css\all.css">
         <link rel="stylesheet" href="custom_css\custom_css.css">  
-        <script src="scripts/onLogout.js"></script>      
+        <script src="scripts/onLogout.js"></script>  
+        <script src="scripts/raportManager.js"></script>      
     </head>
     <body>
       <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
@@ -32,7 +33,7 @@ if($_SESSION['uname']=="")
             $result2 = mysqli_query($link,$sql_query);
             $row2 = mysqli_fetch_array($result2);
             $img = $row2['nazwa'];
-            echo "<button name=$id value=$img type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src=$img></img><br><br>";
+            echo "<button name=$id value=$img onclick='updateRaportSession(this)' type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src=$img></img><br><br>";
           } 
         ?>
       </form>

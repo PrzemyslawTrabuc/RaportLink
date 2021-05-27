@@ -55,8 +55,8 @@ if($_SESSION['uname']=="")
        </div>         
       </div> 
       <script>
-        if(sessionStorage && sessionStorage.getItem("raport"))
-        document.getElementById("Raport").innerHTML = JSON.parse(sessionStorage.getItem("raport"));
+        if(sessionStorage && sessionStorage.getItem(sessionStorage.getItem("currentRaport")))
+        document.getElementById("Raport").innerHTML = JSON.parse(sessionStorage.getItem(sessionStorage.getItem("currentRaport")));
       </script>
 </div>
 <!--------------------------------------------------------------------------------->
