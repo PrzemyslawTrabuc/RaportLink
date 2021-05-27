@@ -24,7 +24,7 @@ $(document).ready(function addEvent() {
 
  window.addEventListener("load", () => {
    function newRaport(){
-      if(sessionStorage && sessionStorage.getItem("raport")){
+      if(sessionStorage && sessionStorage.getItem("currentRaport")){
          if (confirm("Jesteś pewny? Utracisz bezpowrotnie niedokończony raport")) {
             sessionStorage.removeItem(sessionStorage.getItem("currentRaport"));
             window.location.reload();
