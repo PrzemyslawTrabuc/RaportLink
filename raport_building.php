@@ -39,7 +39,7 @@ if($_SESSION['uname']=="")
       </form>        
         <hr>
         <form action="scripts/logout.php">
-        <button type="submit" class="btn btn-danger"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
+        <button type="submit" class="btn btn-danger" id="logout_button"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button>
         <button type="button" class="btn btn-success" id="new_raport"><i class="far fa-newspaper fa-lg"></i> Nowy raport</button>
       </form>
        </div>       

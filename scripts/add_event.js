@@ -31,6 +31,7 @@ $(document).ready(function addEvent() {
          } 
    }
    document.getElementById("new_raport").addEventListener('click', newRaport);
+   document.getElementById("logout_button").addEventListener('click', newRaport);
  });
 //  window.onbeforeunload = function (e) {
 //    sessionStorage.removeItem("raport");
