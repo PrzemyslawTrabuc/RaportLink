@@ -29,7 +29,7 @@ if($_SESSION['uname']=="")
     </head>
     <body>
       <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
-      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
+      <p class="welcome_text"><?php echo "Witaj w edycji firm: ".$_SESSION['uname']  ?></p> 
       <div class="buttons_middle">     
       <form action="scripts/redirect_to_company.php" method="POST">
         <?php 

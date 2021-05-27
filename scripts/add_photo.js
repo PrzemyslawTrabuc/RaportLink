@@ -17,7 +17,8 @@ $(document).ready(function addPhoto() {
       img = document.getElementById("imageResult").src = "";       
       var raportHTML = document.getElementById("Raport");
       var raport = JSON.stringify(raportHTML.innerHTML);
-      sessionStorage.setItem('raport', raport);
+     // sessionStorage.setItem('raport', raport);
+     sessionStorage.setItem(sessionStorage.getItem("currentRaport"), raport);
    }else
    {
     document.getElementById('alert').style.display = 'block';
