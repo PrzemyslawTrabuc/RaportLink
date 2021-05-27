@@ -76,7 +76,6 @@ window.addEventListener("change", () => {
     function updateColor(){
         color = document.getElementById("pen-color").value;
         context.strokeStyle = color;
-        console.log(context.strokeStyle + "color updated");
     }
 
     function updateSize(){
@@ -156,9 +155,7 @@ window.addEventListener("change", () => {
         let col = document.getElementById("pen-color");
         let penSize = document.getElementById("pen-size");
         // let penType2 = document.getElementById("rect");
-        console.log(color +" var not updated " + col.value);
         if(col.value != color){
-            console.log("pending...");
             updateColor();
         }
         if(penSize.value != size){
