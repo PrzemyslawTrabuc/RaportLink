@@ -99,7 +99,7 @@ if($_SESSION['uname']=="")
               "<div class='form-group'><label for='number'>Numer lokalu: </label>",
               "<input type='number' class='form-control' id='number' value='$num' name='number' required></div>",
               "<div class='form-group'><label for='path'>Logo: </label>",
-              "<input type='file' class='form-control' id='path' value='$path' name='path' accept='image/png, image/jpeg' required></div>",
+              "<input type='file' class='form-control' id='path' value='$path' name='path' accept='image/png, image/jpeg'></div>",
               "<input type='hidden' class='form-control' id='idzdj' value='$idzdj' name='idzdj' required>";             
           ?> 
           <br>

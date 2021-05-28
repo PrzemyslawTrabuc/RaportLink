@@ -21,39 +21,39 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     $_SESSION['users_edit_flag']=0;
 
-    $sql = "update firmy set nazwa='$name', adr_kod_pocztowy='$code', adr_miasto='$city', adr_ulica='$street', adr_numer='$num' where nrid='$id'";
+    $sql = "update firma set `nazwa`='$name', `adr_kod_pocztowy`='$code', `adr_miasto`='$city', `adr_ulica`='$street', `adr_numer`='$num' where `firma`.`nrid`='$id'";
+    // echo $sql;
     mysqli_query($link, $sql);
 
-    if($path != "" || $path != null){
+    // if($path != "" && $path != null){
+    //     $image = $_SESSION['path'];
 
-        $image = $_SESSION['path'];
-
-        $imagePath = "../images/";
-        $imagetype = $_FILES['pic']['type'];
-        //Stores any error codes from the upload.
-        $imageerror = $_FILES['pic']['error'];
-        //Stores the tempname as it is given by the host when uploaded.
-        $imagetemp = $_FILES['pic']['tmp_name'];
+    //     $imagePath = "../images/";
+    //     $imagetype = $_FILES['pic']['type'];
+    //     //Stores any error codes from the upload.
+    //     $imageerror = $_FILES['pic']['error'];
+    //     //Stores the tempname as it is given by the host when uploaded.
+    //     $imagetemp = $_FILES['pic']['tmp_name'];
     
-        if(is_uploaded_file($imagetemp)) {
-            if(move_uploaded_file($imagetemp, $imagePath . $imagename)) {
-                $fullpath = "images/"+$imagename;
-                $sql2 = "update zdjecie set nazwa='$fullpath' where nrid='$idzdj'";
-                mysqli_query($link, $sql2);
-                echo "Sussecfully uploaded your image.";
-            }
-            else {
-                echo "Failed to move your image.";
-                header("location: ../company.php");
-            }
-        }
-        else {
-            echo "Failed to upload your image.";
-            header("location: ../company.php");
-        }
+    //     if(is_uploaded_file($imagetemp)) {
+    //         if(move_uploaded_file($imagetemp, $imagePath . $imagename)) {
+    //             $fullpath = "images/"+$imagename;
+    //             $sql2 = "update zdjecie set nazwa='$fullpath' where nrid='$idzdj'";
+    //             mysqli_query($link, $sql2);
+    //             echo "Sussecfully uploaded your image.";
+    //         }
+    //         else {
+    //             echo "Failed to move your image.";
+    //             header("location: ../company.php");
+    //         }
+    //     }
+    //     else {
+    //         echo "Failed to upload your image.";
+    //         header("location: ../company.php");
+    //     }
 
-        $_SESSION['users_edit_falg']=1;
-    }
+    //     $_SESSION['users_edit_falg']=1;
+    // }
     if (mysqli_query($link, $sql) === TRUE) {
         if(isset($_SESSION['name'])){
             unset($_SESSION['name']);

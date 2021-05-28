@@ -82,7 +82,7 @@ if($_SESSION['uname']=="")
               "<div class='form-group'><label for='name'>Imie: </label>",
               "<input type='text' class='form-control' id='name' value='$name' name='name'></div>",
               "<div class='form-group'><label for='surname'>Nazwisko: </label>",
-              "<input type='password' class='form-control' id='surname' value='$surname' name='surname' required></div>",
+              "<input type='text' class='form-control' id='surname' value='$surname' name='surname' required></div>",
               "<div class='form-group'><label for='password'>Hasło:</label>",
               "<input type='text' class='form-control' id='password' name='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Minimum 8 letters, 1 upper case and 1 number'></div>";             
           ?> 

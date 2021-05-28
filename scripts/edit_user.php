@@ -35,6 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           if(isset($_SESSION['id'])){
             unset($_SESSION['id']);
           }
+          $_SESSION['users_edit_flag']=1;
           header("location: ../users.php");
           exit;
     } else {
