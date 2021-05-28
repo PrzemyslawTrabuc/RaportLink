@@ -9,20 +9,18 @@ if($_SESSION['uname']=="")
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include "config.php"; 
 
-    $id = $_SESSION['id'];
-    $name = $_SESSION['name'];
-    $code = $_SESSION['code'];
-    $city = $_SESSION['city'];
-    $street = $_SESSION['street'];
-    $num = $_SESSION['number'];
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $code = $_POST['code'];
+    $city = $_POST['city'];
+    $street = $_POST['street'];
+    $num = $_POST['number'];
 
-    $idzdj = $_SESSION['idzdj'];
-    $path = $_SESSION['path'];
+    $idzdj = $_POST['idzdj'];
+    $path = $_POST['path'];
 
-    $_SESSION['users_edit_flag']=0;
-
-    $sql = "update firma set `nazwa`='$name', `adr_kod_pocztowy`='$code', `adr_miasto`='$city', `adr_ulica`='$street', `adr_numer`='$num' where `firma`.`nrid`='$id'";
-    // echo $sql;
+    $_SESSION['users_edit_flag']=1;
+    $sql = "update firma set `nazwa`='$name', `adr_kod_pocztowy`='$code', `adr_miasto`='$city', `adr_ulica`='$street', `adr_numer`='$num' where `firma`.`nrid`='$id'";   
     mysqli_query($link, $sql);
 
     // if($path != "" && $path != null){
@@ -52,7 +50,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //         header("location: ../company.php");
     //     }
 
-    //     $_SESSION['users_edit_falg']=1;
+    //     $_SESSION['users_edit_flag']=1;
     // }
     if (mysqli_query($link, $sql) === TRUE) {
         if(isset($_SESSION['name'])){
@@ -79,7 +77,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           if(isset($_SESSION['idzdj'])){
             unset($_SESSION['idzdj']);
           }
-          header("location: ../company.php");
+         header("location: ../company.php");
           exit;
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;
@@ -109,7 +107,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       if(isset($_SESSION['idzdj'])){
         unset($_SESSION['idzdj']);
       }
-      header("location: ../company.php");
+     header("location: ../company.php");
       exit;
 }
 
