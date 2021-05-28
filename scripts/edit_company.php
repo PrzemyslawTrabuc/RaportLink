@@ -9,15 +9,15 @@ if($_SESSION['uname']=="")
 if($_SERVER["REQUEST_METHOD"] == "POST"){
     include "config.php"; 
 
-    $id = $_SESSION['id'];
-    $name = $_SESSION['name'];
-    $code = $_SESSION['code'];
-    $city = $_SESSION['city'];
-    $street = $_SESSION['street'];
-    $num = $_SESSION['number'];
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $code = $_POST['code'];
+    $city = $_POST['city'];
+    $street = $_POST['street'];
+    $num = $_POST['number'];
 
-    $idzdj = $_SESSION['idzdj'];
-    $path = $_SESSION['path'];
+    $idzdj = $_POST['idzdj'];
+    $path = $_POST['path'];
 
     $_SESSION['users_edit_flag']=0;
 
@@ -26,30 +26,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     mysqli_query($link, $sql);
 
     // if($path != "" && $path != null){
-    //     $image = $_SESSION['path'];
 
-    //     $imagePath = "../images/";
-    //     $imagetype = $_FILES['pic']['type'];
-    //     //Stores any error codes from the upload.
-    //     $imageerror = $_FILES['pic']['error'];
-    //     //Stores the tempname as it is given by the host when uploaded.
-    //     $imagetemp = $_FILES['pic']['tmp_name'];
-    
-    //     if(is_uploaded_file($imagetemp)) {
-    //         if(move_uploaded_file($imagetemp, $imagePath . $imagename)) {
-    //             $fullpath = "images/"+$imagename;
-    //             $sql2 = "update zdjecie set nazwa='$fullpath' where nrid='$idzdj'";
-    //             mysqli_query($link, $sql2);
-    //             echo "Sussecfully uploaded your image.";
-    //         }
-    //         else {
-    //             echo "Failed to move your image.";
-    //             header("location: ../company.php");
-    //         }
-    //     }
-    //     else {
-    //         echo "Failed to upload your image.";
-    //         header("location: ../company.php");
+    //     $target_dir = "../images/";
+    //     $target_file = $target_dir . basename($_FILES["path"]["name"]);
+    //     $uploadOk = 1;
+    //     $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    //     // Check if image file is a actual image or fake image
+    //     if(isset($_POST["submit"])) {
+    //       $check = getimagesize($_FILES["path"]["tmp_name"]);
+    //       if($check !== false) {
+    //         $imagetype = $_FILES['path']['type'];
+    //         $fullpath = "images/"+$imagename+"."+$imagetype;
+    //         $sql2 = "update zdjecie set `nazwa`='$fullpath' where `zdjecie`.`nrid`='$idzdj'";
+    //         mysqli_query($link, $sql2);
+    //         echo "File is an image - " . $check["mime"] . ".";
+    //         $uploadOk = 1;
+    //       } else {
+    //         echo "File is not an image.";
+    //         $uploadOk = 0;
+    //       }
     //     }
 
     //     $_SESSION['users_edit_falg']=1;
