@@ -19,10 +19,8 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $idzdj = $_POST['idzdj'];
     $path = $_POST['path'];
 
-    $_SESSION['users_edit_flag']=0;
-
-    $sql = "update firma set `nazwa`='$name', `adr_kod_pocztowy`='$code', `adr_miasto`='$city', `adr_ulica`='$street', `adr_numer`='$num' where `firma`.`nrid`='$id'";
-    // echo $sql;
+    $_SESSION['users_edit_flag']=1;
+    $sql = "update firma set `nazwa`='$name', `adr_kod_pocztowy`='$code', `adr_miasto`='$city', `adr_ulica`='$street', `adr_numer`='$num' where `firma`.`nrid`='$id'";   
     mysqli_query($link, $sql);
 
     // if($path != "" && $path != null){
@@ -47,7 +45,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //       }
     //     }
 
-    //     $_SESSION['users_edit_falg']=1;
+    //     $_SESSION['users_edit_flag']=1;
     // }
     if (mysqli_query($link, $sql) === TRUE) {
         if(isset($_SESSION['name'])){
@@ -74,7 +72,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           if(isset($_SESSION['idzdj'])){
             unset($_SESSION['idzdj']);
           }
-          header("location: ../company.php");
+         header("location: ../company.php");
           exit;
     } else {
         echo "Error: " . $sql . "<br>" . $link->error;
@@ -104,7 +102,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       if(isset($_SESSION['idzdj'])){
         unset($_SESSION['idzdj']);
       }
-      header("location: ../company.php");
+     header("location: ../company.php");
       exit;
 }
 

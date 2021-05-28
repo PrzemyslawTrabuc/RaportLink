@@ -28,6 +28,7 @@ if($_SESSION['uname']=="")
 
     </head>
     <body>
+    <div id="alert" class="alert alert-success " role="alert"> Zmiany w firmach wprowadzone </div>
       <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
       <p class="welcome_text"><?php echo "Witaj w edycji firm: ".$_SESSION['uname']  ?></p> 
       <div class="buttons_middle">     
@@ -100,7 +101,11 @@ if($_SESSION['uname']=="")
               "<input type='number' class='form-control' id='number' value='$num' name='number' required></div>",
               "<div class='form-group'><label for='path'>Logo: </label>",
               "<input type='file' class='form-control' id='path' value='$path' name='path' accept='image/png, image/jpeg'></div>",
+
               "<input type='hidden' class='form-control' id='idzdj' value='$idzdj' name='idzdj' required>";             
+
+              "<input type='hidden' class='form-control' id='idzdj' value='$idzdj' name='idzdj'>";             
+
           ?> 
           <br>
           <div class="modal-footer">          
@@ -172,7 +177,7 @@ if($_SESSION['uname']=="")
 if(@$_SESSION['users_edit_flag'] == 1)
 {  
 echo "<script type='text/javascript'>","document.getElementById('alert').style.display = 'block';","</script>";
-$_SESSION['users_edit_falg']=0;
+$_SESSION['users_edit_flag']=0;
 }
 ?>
     </body>
