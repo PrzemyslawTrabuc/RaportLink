@@ -12,10 +12,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $surname = $_POST['surname'];
     $password = $_POST['password'];
     $id = $_POST['id'];
+    if(isset($_POST['upr'])){
+        $upr = 0;
+    }else {
+        $upr = 1;
+    }  
     $_SESSION['users_edit_flag']=0;
 
     if($password == ""){
-        $sql = "update pracownicy set Imie='$name', Nazwisko='$surname' where nrid='$id'";
+        $sql = "update pracownicy set Imie='$name', Nazwisko='$surname', Rola_w_systemie='$upr' where nrid='$id'";
         $_SESSION['users_edit_falg']=1;
     }else{
         $sql = "update pracownicy set Imie='$name', Nazwisko='$surname' where nrid='$id'";

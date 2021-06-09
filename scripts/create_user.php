@@ -10,10 +10,15 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $login = $_POST['login'];
-    $password = $_POST['password'];    
+    $password = $_POST['password'];
+    if(isset($_POST['upr'])){
+        $upr = 0;
+    }else {
+        $upr = 1;
+    }    
     $_SESSION['users_edit_falg']=0;
 
-    $sql = "INSERT INTO pracownicy (imie, nazwisko, rola_w_systemie) VALUES ('$name', '$surname', 0)";
+    $sql = "INSERT INTO pracownicy (imie, nazwisko, rola_w_systemie) VALUES ('$name', '$surname', '$upr')";
 
     if (mysqli_query($link, $sql) === TRUE) {
 

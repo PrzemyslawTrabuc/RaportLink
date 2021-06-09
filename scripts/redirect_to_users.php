@@ -20,6 +20,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
       $_SESSION['id'] = $row['nrid'];
       $_SESSION['name'] = $row['Imie'];
       $_SESSION['surname'] = $row['Nazwisko'];
+      $_SESSION['nupr'] = $row['Rola_w_systemie'];
 
       header("location: ../users.php");
       exit;
@@ -34,6 +35,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(isset($_SESSION['id'])){
       unset($_SESSION['id']);
     }
+    if(isset($_SESSION['nupr'])){
+      unset($_SESSION['nupr']);
+    }
     header("location: ../users.php");
     exit;
   }
@@ -46,6 +50,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   }
   if(isset($_SESSION['id'])){
     unset($_SESSION['id']);
+  }
+  if(isset($_SESSION['nupr'])){
+    unset($_SESSION['nupr']);
   }
   header("location: users.php");
   exit;

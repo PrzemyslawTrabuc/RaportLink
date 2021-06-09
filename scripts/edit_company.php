@@ -23,7 +23,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $sql = "update firma set `nazwa`='$name', `adr_kod_pocztowy`='$code', `adr_miasto`='$city', `adr_ulica`='$street', `adr_numer`='$num' where `firma`.`nrid`='$id'";   
     mysqli_query($link, $sql);
 
-    // if($path != "" && $path != null){
+    if($path != "" && $path != null){
 
     //     $target_dir = "../images/";
     //     $target_file = $target_dir . basename($_FILES["path"]["name"]);
@@ -46,7 +46,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     //     }
 
     //     $_SESSION['users_edit_flag']=1;
-    // }
+    }
     if (mysqli_query($link, $sql) === TRUE) {
         if(isset($_SESSION['name'])){
             unset($_SESSION['name']);

@@ -16,11 +16,15 @@ if($_SESSION['uname']=="")
         <script src="scripts/raportManager.js"></script>      
     </head>
     <body>
+    
       <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
       <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
       <div class="buttons_middle">     
       <form action="scripts/redirect_to_building.php" method="POST">
         <?php 
+
+          if($_SESSION['upr'] != 0){
+
           include "scripts/config.php";    
           $sql_query = "select * from firma";
           $result = mysqli_query($link,$sql_query);
@@ -35,16 +39,20 @@ if($_SESSION['uname']=="")
             $img = $row2['nazwa'];
             echo "<button name=$id value=$img onclick='updateRaportSession(this)' type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src=$img></img><br><br>";
           } 
-        ?>
-      </form>
-      <form action="scripts/redirect_to_company.php" method="POST">
-        <button type="submit" class="btn btn-light"><i class="far fa-edit fa-lg"></i>Firmy</button>
-      </form>  
-      <br>
-      <form action="scripts/redirect_to_users.php" method="POST">
-        <button type="submit" class="btn btn-light"><i class="fas fa-users fa-lg"></i> Użytkownicy</button>     
-      </form>     
+          }else {
+            echo "</form>
+            <form action='scripts/redirect_to_company.php' method='POST'>
+              <button type='submit' class='btn btn-light'><i class='far fa-edit fa-lg'></i>Firmy</button>
+            </form>  
+            <br>
+            <form action='scripts/redirect_to_users.php' method='POST'>
+              <button type='submit' class='btn btn-light'><i class='fas fa-users fa-lg'></i> Użytkownicy</button>     
+            </form>";
+          }
 
+      
+      
+      ?>
       <form onclick="return logout()" action="scripts/logout.php" id="logout_form">
       <hr>
         <p></p><button type="submit" class="btn btn-danger" id="logout_button"><i class="fas fa-sign-out-alt fa-lg"></i> Wyloguj</button></p>

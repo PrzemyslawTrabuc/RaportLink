@@ -73,18 +73,32 @@ if($_SESSION['uname']=="")
         </button>
       </div>
       <div class="modal-body">
+        <form action="scripts/delete_user.php" method="POST">
+        <?php
+          $id = $_SESSION['id'];
+          echo "<input type='hidden' id='id' value='$id' name='id'>";
+          echo "<button type='submit' class='btn btn-danger'><i class='fas fa-sync fa-lg'></i> Usuń</button>";
+        ?> 
+        </form>
         <form action="scripts/edit_user.php" method="POST">
           <?php
-              $id = $_SESSION['id'];
+              
               $name = $_SESSION['name'];
               $surname = $_SESSION['surname'];
+              $upr = $_SESSION['nupr'];
               echo "<input type='hidden' class='form-control' id='id' value='$id' name='id' required>",
               "<div class='form-group'><label for='name'>Imie: </label>",
               "<input type='text' class='form-control' id='name' value='$name' name='name'></div>",
               "<div class='form-group'><label for='surname'>Nazwisko: </label>",
               "<input type='text' class='form-control' id='surname' value='$surname' name='surname' required></div>",
               "<div class='form-group'><label for='password'>Hasło:</label>",
-              "<input type='password' class='form-control' id='password' name='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Minimum 8 letters, 1 upper case and 1 number'></div>";             
+              "<input type='password' class='form-control' id='password' name='password' pattern='(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}' title='Minimum 8 letters, 1 upper case and 1 number'></div>",
+              "<div class='form-group'><label for='upr'>Administrator:</label>",
+              "<input type='checkbox' id='upr' name='upr'";
+              if($upr == 0){
+                echo "checked";
+              }
+              echo "></div>";             
           ?> 
           <br>
           <div class="modal-footer">          
@@ -123,6 +137,10 @@ if($_SESSION['uname']=="")
             <div class="form-group">
             <label for="password">Hasło:</label>
             <input type="text" class="form-control" id="password" name="password" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Minimum 8 letters, 1 upper case and 1 number">
+            </div> 
+            <div class="form-group">
+            <label for="upr">Administrator:</label>
+            <input type="checkbox" id="upr" name="upr">
             </div> 
             <br>
       <div class="modal-footer">

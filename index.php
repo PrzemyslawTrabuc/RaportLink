@@ -9,10 +9,18 @@ $login_error_flag = 0;
             $result = mysqli_query($link,$sql_query);     
             $row = mysqli_fetch_array($result);
             $count = $row['cntUser'];
-            if($count > 0){        
-                $_SESSION['uname'] = $uname;
-                header('Location:signed_in.php', true, 301);
-                exit;
+            if($count > 0){
+              $sql_query = "select nrid from dane_do_logowania where login='".$uname."' and haslo='".$password."'";
+              $result = mysqli_query($link,$sql_query);     
+              $row = mysqli_fetch_array($result);     
+              $row3 = $row['nrid'];
+              $sql_query2 = "select * from pracownicy where nrid='".$row3."'";
+              $result2 = mysqli_query($link,$sql_query2);     
+              $row2 = mysqli_fetch_array($result2);   
+              $_SESSION['uname'] = $uname;
+              $_SESSION['upr'] = $row2['Rola_w_systemie'];
+              header('Location:signed_in.php', true, 301);
+              exit;
             }else{                 
               $login_error_flag = 1;        
             }
