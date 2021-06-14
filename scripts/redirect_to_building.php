@@ -6,7 +6,9 @@ foreach($_POST as $name => $content) { // Most people refer to $key => $value
     include "config.php";    
     $sql_query = "select * from firma where nrid = '$name'";
     $result = mysqli_query($link,$sql_query);
-    $_SESSION['firma'] = $result;
+    $row = mysqli_fetch_array($result);
+
+    $_SESSION['firma'] = $row['nazwa'];
 
     $_SESSION['logo'] = $content;
  }

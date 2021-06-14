@@ -20,7 +20,8 @@ if($_SESSION['uname']=="")
     <div id="alert" class="alert alert-warning" role="alert"> Uzupełnij wszystkie pola </div>  
      <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
      <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
-     <p class="welcome_text"><?php echo "Tworzysz raport dla ".$_SESSION['uname']  ?></p> 
+     
+     <p class="welcome_text"><?php echo "Tworzysz raport dla ".$_SESSION['firma']  ?></p> 
      <!-----------side buttons--->
      <div class="buttons_side">
      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"><i class="fas fa-bolt fa-lg"></i> Dodaj zdarzenie</button>

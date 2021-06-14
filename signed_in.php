@@ -36,8 +36,9 @@ if($_SESSION['uname']=="")
             $result2 = mysqli_query($link,$sql_query);
             $row2 = mysqli_fetch_array($result2);
             $img = $row2['nazwa'];
-            echo "<button name=$id value=$img onclick='updateRaportSession(this)' type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src=$img></img><br><br></form>";
-          } 
+            echo "<button name=$id value=$img onclick='updateRaportSession(this)' type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src=$img></img><br><br>";
+          }
+          echo "</form>";
           }else {
             echo "<form action='scripts/redirect_to_company.php' method='POST'>
               <button type='submit' class='btn btn-light'><i class='far fa-edit fa-lg'></i>Firmy</button>
