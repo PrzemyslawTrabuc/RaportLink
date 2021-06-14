@@ -20,6 +20,7 @@ $login_error_flag = 0;
               $_SESSION['uname'] = $uname;
               $_SESSION['upr'] = $row2['Rola_w_systemie'];
               header('Location:signed_in.php', true, 301);
+              echo $_SESSION['upr'];
               exit;
             }else{                 
               $login_error_flag = 1;        
