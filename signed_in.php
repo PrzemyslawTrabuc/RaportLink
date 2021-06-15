@@ -20,7 +20,7 @@ if($_SESSION['uname']=="")
       <div id="logo-top" class="container"><img src="images/Raport_Link_logo_light.svg"></div>
       <p class="welcome_text"><?php echo "Witaj ".$_SESSION['uname']  ?></p> 
       <div class="buttons_middle">     
-        <?php           
+        <?php      
           if($_SESSION['upr'] != 0){
           include "scripts/config.php";    
           $sql_query = "select * from firma";
@@ -38,7 +38,14 @@ if($_SESSION['uname']=="")
           } 
           echo "</form>";
           }else {
-            echo "</form>";
+            echo "<form action='scripts/redirect_to_company.php' method='POST'>
+            <button type='submit' class='btn btn-light'><i class='far fa-edit fa-lg'></i>Firmy</button>
+            </form>  
+          <br>
+          <form action='scripts/redirect_to_users.php' method='POST'>
+            <button type='submit' class='btn btn-light'><i class='fas fa-users fa-lg'></i> Użytkownicy</button>              
+          </form></form>";
+          
           }
 
       
