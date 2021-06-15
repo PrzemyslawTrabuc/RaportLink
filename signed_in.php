@@ -35,11 +35,7 @@ if($_SESSION['uname']=="")
             $row2 = mysqli_fetch_array($result2);
             $img = $row2['nazwa'];
             echo "<button name=$id value=$img onclick='updateRaportSession(this)' type='submit' class='btn btn-primary'><i class='far fa-building fa-lg'></i> $name</button><img class='company_logo' src=$img></img><br><br>";
-<<<<<<< HEAD
-          }
-=======
           } 
->>>>>>> 0f77e90fbb2bf61a7c03c789bd6248469c615b6d
           echo "</form>";
           }else {
             echo "</form>";
