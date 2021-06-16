@@ -13,30 +13,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $row = mysqli_fetch_array($result);
     $imagename = $row['cnt'];
 
-    $image = $_POST['path'];
+    // $image = $_POST['path'];
 
-    $imagePath = "../images/";
-    //Stores the tempname as it is given by the host when uploaded.
-    $imagetemp = $_FILES['path']['tmp_name'];
+    // $imagePath = "../images/";
+    // //Stores the tempname as it is given by the host when uploaded.
+    // $imagetemp = $_FILES['path']['tmp_name'];
 
-    if(is_uploaded_file($imagetemp)) {
-        if(move_uploaded_file($imagetemp, $imagePath . $imagename)) {
-            echo "Sussecfully uploaded your image.";
-        }
-        else {
-            echo "Failed to move your image.";
-        }
-    }
-    else {
-        echo "Failed to upload your image.";
-    }
+    // if(is_uploaded_file($imagetemp)) {
+    //     if(move_uploaded_file($imagetemp, $imagePath . $imagename)) {
+    //         echo "Sussecfully uploaded your image.";
+    //     }
+    //     else {
+    //         echo "Failed to move your image.";
+    //     }
+    // }
+    // else {
+    //     echo "Failed to upload your image.";
+    // }
 
     $fullpath = "images/";
     $fullpath .= $imagename;
 
     $sql = "INSERT INTO `raportlink_db`.`zdjecie` (`nrid`, `nazwa`, `szerokosc`, `wysokosc`) VALUES ('$imagename', '$fullpath', '1', '1')";
 
-    if (mysqli_query($link, $sql) === TRUE) {
+    //if (mysqli_query($link, $sql) === TRUE) {
         $name = $_POST['name'];
         $code = $_POST['code'];
         $city = $_POST['city'];
@@ -53,9 +53,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         echo "New record created successfully";  
         //$_SESSION['users_edit_flag']=1;
         // header("location: ../company.php");
-    } else {
-        echo "Error: " . $sql . "<br>" . $link->error;
-    }
+    // } else {
+    //     echo "Error: " . $sql . "<br>" . $link->error;
+    // }
 }else {
     echo "Error...";
 }

@@ -45,7 +45,6 @@ if($_SESSION['uname']=="")
           <form action='scripts/redirect_to_users.php' method='POST'>
             <button type='submit' class='btn btn-light'><i class='fas fa-users fa-lg'></i> Użytkownicy</button>              
           </form></form>";
-          
           }
 
       
